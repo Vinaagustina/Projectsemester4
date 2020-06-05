@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Apotek Sari Farma</title>
+    <title>Apotek Livina</title>
 
     <!-- Bootstrap -->
     <link href="../assets/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,8 +53,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-plus-square"></i> Apotek Sari Farma</h1>
-                  <p>©2018 All Rights Reserved. Privacy and Terms</p>
+                  <h1><i class="fa fa-plus-square"></i> Apotek Livina</h1>
+                  <p>ï¿½2020 All Rights Reserved. Privacy and Terms</p>
                 </div>
               </div>
             </form>

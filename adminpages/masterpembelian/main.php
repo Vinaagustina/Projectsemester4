@@ -36,7 +36,7 @@ include "../templates/header.php";
 	<div class="">
 		<div class="page-title">
 			<div class="title_left">
-				<h3><small>Master Pembelian</small></h3>
+				<h3><small>Data Pembelian</small></h3>
 			</div>
 
 
@@ -57,15 +57,13 @@ include "../templates/header.php";
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>Id Pembelian</th>
-									<th>Id Supplier</th>
+									<th>ID Pembelian</th>
+									<th>ID Supplier</th>
 									<th>Nama Supplier</th>
 									<th>Tanggal Beli</th>
 									<th>No Bukti</th>
 									<th>Diskon</th>
-									
-									
-									<th style="width: 150px;">Aksi</th>
+									<th style="width: 100px;">Aksi</th>
 
 								</tr>
 							</thead>

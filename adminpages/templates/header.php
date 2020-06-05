@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Apotek Sari Farma</title>
+    <title>Apotek Livina</title>
 
     <!-- Bootstrap -->
     <link href="../../assets/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -60,7 +60,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-plus-square"></i> <span>ApotekSariFarma</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-plus-square"></i> <span>ApotekLivina</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -92,20 +92,20 @@
 				
 				<?php } else { ?>
 
-                  <li><a href="<?php echo $admin_url; ?>home/main.php"><i class="fa fa-home"></i> Home </a></li>
+            <li><a href="<?php echo $admin_url; ?>home/main.php"><i class="fa fa-home"></i> Home </a></li>
 				   <li><a href="<?php echo $admin_url; ?>kasir/main.php"><i class="fa fa-calculator"></i> Kasir </a></li>
-           <li><a href="<?php echo $admin_url; ?>masterpasien/main.php"><i class="fa fa-user"></i> Master Pasien </a></li>
-				    <li><a href="<?php echo $admin_url; ?>masterbarang/main.php"><i class="fa fa-cubes"></i> Master Barang </a></li>
-            <li><a href="<?php echo $admin_url; ?>masterpembelian/main.php"><i class="fa fa-cubes"></i> Master Pembelian </a></li>
-            <li><a href="<?php echo $admin_url; ?>masterresep/main.php"><i class="fa fa-file"></i> Master Resep </a></li>
-					 <li><a href="<?php echo $admin_url; ?>mastersupplier/main.php"><i class="fa fa-users"></i>Master Supplier </a></li>
-					  <li><a href="<?php echo $admin_url; ?>laporan/main.php"><i class="fa fa-table"></i>Laporan</a></li> 
+           <!-- <li><a href="<?php echo $admin_url; ?>masterpasien/main.php"><i class="fa fa-user"></i> Master Pasien </a></li> -->
+				    <li><a href="<?php echo $admin_url; ?>masterbarang/main.php"><i class="fa fa-cubes"></i> Data Barang </a></li>
+            <li><a href="<?php echo $admin_url; ?>masterpembelian/main.php"><i class="fa fa-cubes"></i> Data Pembelian </a></li>
+            <!-- <li><a href="<?php echo $admin_url; ?>masterresep/main.php"><i class="fa fa-file"></i> Master Resep </a></li> -->
+					 <li><a href="<?php echo $admin_url; ?>mastersupplier/main.php"><i class="fa fa-users"></i>Data Supplier </a></li>
+					  <li><a><i class="fa fa-table"></i>Laporan</a></li> 
               <ul>
               <li><a href="<?php echo $admin_url; ?>transaksi/main.php">Transaksi</a></li>
               <li><a href="<?php echo $admin_url; ?>pembelian/main.php">Pembelian</a></li>
-              <li><a href="<?php echo $admin_url; ?>pasien/main.php">Pasien</a></li>
+              <!-- <li><a href="<?php echo $admin_url; ?>pasien/main.php">Pasien</a></li> -->
               <li><a href="<?php echo $admin_url; ?>barang/main.php">Barang</a></li>
-              <li><a href="<?php echo $admin_url; ?>resep/main.php">Resep</a></li>
+              <!-- <li><a href="<?php echo $admin_url; ?>resep/main.php">Resep</a></li> -->
               <li><a href="<?php echo $admin_url; ?>supplier/main.php">Supplier</a></li>
               </ul>
               

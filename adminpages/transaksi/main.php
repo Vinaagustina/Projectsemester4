@@ -33,9 +33,9 @@ date_default_timezone_set('asia/jakarta');
 		<thead>	
 			<tr>
 				<th>No.</th>
-					<th>No Nota</th>
+				<th>No Nota</th>
 				<th>ID Transaksi</th>
-				<th>ID Pasien</th>
+				<!-- <th>ID Pasien</th> -->
 			
 				
 				<th>Tanggal Penjualan</th>
@@ -47,7 +47,7 @@ date_default_timezone_set('asia/jakarta');
 		if(isset($_POST['cari']))
 		{
 			$date = trim($_POST['tgl']);
-			$query = "SELECT no_nota, kd_transaksi, id_pasien,  tgl_penjualan, total_pembelian FROM transaksi WHERE date(tgl_penjualan) = '$date' GROUP BY no_nota  ORDER BY tgl_penjualan";
+			$query = "SELECT no_nota, kd_transaksi,  tgl_penjualan, total_pembelian FROM transaksi WHERE date(tgl_penjualan) = '$date' GROUP BY no_nota  ORDER BY tgl_penjualan";
 		}
 		else
 		{
@@ -62,7 +62,7 @@ date_default_timezone_set('asia/jakarta');
 					<td><?php echo $no ?></td>
 				<td><?php echo $data['no_nota']; ?></td>
 				<td><?php echo $data['kd_transaksi']; ?></td>
-				<td><?php echo $data['id_pasien']; ?></td>
+				<!-- <td><?php echo $data['id_pasien']; ?></td> -->
 				<td><?php echo $data['tgl_penjualan']; ?></td>
 				<td><?php echo $data['total_pembelian']; ?></td>
 			</tr>

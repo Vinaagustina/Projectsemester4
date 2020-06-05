@@ -58,7 +58,7 @@ date_default_timezone_set('Asia/Jakarta');
 					<div class="row">
 						<div class="col-md-2">
 							<div class="form-group">
-								<label for="no-nota">No Nota</label>
+								<label for="no-nota">No. Nota</label>
 								<input type="text" class="form-control" name="no_nota" id="no-nota" value="<?= $autokode ?>" readonly>
 							</div>
 						</div>
@@ -70,14 +70,14 @@ date_default_timezone_set('Asia/Jakarta');
 						</div>
 						<div class="col-md-2">
 							<div class="form-group">
-								<label for="id-pasien">ID Pasien</label>
-								<input type="text" class="form-control" name="id_pasien" id="id-transaksi" required>
+								<label for="id-barang">ID Barang</label>
+								<select class="form-control" id="id-barang" required></select>
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								<label for="id-barang">ID Barang</label>
-								<select class="form-control" id="id-barang" required></select>
+								<label for="id-pasien">Nama Barang</label>
+								<input type="text" class="form-control" name="id_pasien" id="id-transaksi" required>
 							</div>
 						</div>
 						<div class="col-md-1">
@@ -141,7 +141,7 @@ date_default_timezone_set('Asia/Jakarta');
 							<td>No Nota</td>
 							<td>ID Transaksi</td>
 							
-							<td>ID Pasien</td>
+							<!-- <td>ID Pasien</td> -->
 							<td>Tanggal</td>
 							<td>Total Pembelian</td>
 							<td>Aksi</td>
@@ -149,7 +149,7 @@ date_default_timezone_set('Asia/Jakarta');
 					</thead>
 					<tbody>
 						<?php
-							$sql = mysqli_query($koneksi, "SELECT no_nota, kd_transaksi, id_pasien,  tgl_penjualan, total_pembelian FROM transaksi GROUP BY no_nota ORDER BY id_transaksi DESC");
+							$sql = mysqli_query($koneksi, "SELECT no_nota, kd_transaksi, tgl_penjualan, total_pembelian FROM transaksi GROUP BY no_nota ORDER BY id_transaksi DESC");
 							$no = 1;
 							while ($data = mysqli_fetch_array($sql)){
 						?>
@@ -158,7 +158,7 @@ date_default_timezone_set('Asia/Jakarta');
 							<td><?= $data['no_nota'] ?></td>
 							<td><?= $data['kd_transaksi'] ?></td>
 							
-							<td><?= $data['id_pasien'] ?></td>
+							<!-- <td><?= $data['id_pasien'] ?></td> -->
 							<td><?= $data['tgl_penjualan'] ?></td>
 							<td><?= $data['total_pembelian'] ?></td>
 							<td>
