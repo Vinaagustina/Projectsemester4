@@ -3,7 +3,7 @@ session_start();
 if (empty($_SESSION['username']) AND empty($_SESSION['level'])) {
     echo "<center>Untuk mengakses halaman, Anda harus login <br>";
     echo "<a href=../index.php><b>LOGIN</b></a></center>";
-} else { 
+} else {
 include "../../lib/config_web.php";
 include "../../lib/koneksi.php";
 include "../../lib/pagination.php";
@@ -39,7 +39,7 @@ include "../templates/header.php";
 			<div class="title_left">
 				<h3><small>Data Barang</small></h3>
 			</div>
-		
+
 
 		<div class="clearfix"></div>
 
@@ -84,15 +84,15 @@ include "../templates/header.php";
 								<td><?php echo $data['harga_beli'];?></td>
 								<td><?php echo $data['harga_jualsatuan'];?></td>
 								<td><?php echo $data['stok'];?></td>
-								
-								
+
+
 								<td><a href="<?php echo $admin_url; ?>masterbarang/form_edit.php?id_barang=<?php echo $data['id_barang'];?>">
 								<button class="btn btn-warning">
 									<i class="fa fa-edit"></i>
 								</button></a>
-								
+
 								<a href="<?php echo $admin_url; ?>masterbarang/hapus.php?id_barang=<?php echo $data['id_barang'];?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')">
-								
+
 								<button class="btn btn-danger">
 									<i class="fa fa-remove"></i>
 								</button></a></td>
@@ -115,7 +115,7 @@ include "../templates/header.php";
 
 	<?php showPagination($koneksi, $table, $dataPerPage); ?>
 </ul>
-			
+
 			</div>
 			<div class="clearfix"></div>
 

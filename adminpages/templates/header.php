@@ -43,7 +43,7 @@
         #print-div, #print-div *{
           visibility : visible;
         }
-        #print-div 
+        #print-div
         {
           position : absolute;
           top : 0;
@@ -51,7 +51,7 @@
         }
       }
     </style>
-    
+
   </head>
 
   <body class="nav-md">
@@ -86,10 +86,10 @@
                 <ul class="nav side-menu">
 				<?php if($_SESSION['level']=="A"){ ?>
 				 <li><a href="<?php echo $admin_url; ?>home/main.php"><i class="fa fa-home"></i> Home </a></li>
-					       
+
 				    <li><a href="#"><i class="fa fa-table"></i> Laporan </a></li>
 					<li><a href="../logout.php"><i class="fa fa-sign-out"></i> LogOut </a></li>
-				
+
 				<?php } else { ?>
 
             <li><a href="<?php echo $admin_url; ?>home/main.php"><i class="fa fa-home"></i> Home </a></li>
@@ -99,7 +99,7 @@
             <li><a href="<?php echo $admin_url; ?>masterpembelian/main.php"><i class="fa fa-cubes"></i> Data Pembelian </a></li>
             <!-- <li><a href="<?php echo $admin_url; ?>masterresep/main.php"><i class="fa fa-file"></i> Master Resep </a></li> -->
 					 <li><a href="<?php echo $admin_url; ?>mastersupplier/main.php"><i class="fa fa-users"></i>Data Supplier </a></li>
-					  <li><a><i class="fa fa-table"></i>Laporan</a></li> 
+					  <li><a><i class="fa fa-table"></i>Laporan</a></li>
               <ul>
               <li><a href="<?php echo $admin_url; ?>transaksi/main.php">Transaksi</a></li>
               <li><a href="<?php echo $admin_url; ?>pembelian/main.php">Pembelian</a></li>
@@ -108,20 +108,20 @@
               <!-- <li><a href="<?php echo $admin_url; ?>resep/main.php">Resep</a></li> -->
               <li><a href="<?php echo $admin_url; ?>supplier/main.php">Supplier</a></li>
               </ul>
-              
-					  
+
+
 				   <!-- <li><a href="#"><i class="fa fa-user"></i> U</a></li> -->
 					<li><a href="../logout.php"><i class="fa fa-sign-out"></i> LogOut </a></li>
 				<?php } ?>
                 </ul>
               </div>
-              
+
 
             </div>
             <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
-       
+
             <!-- /menu footer buttons -->
           </div>
         </div>

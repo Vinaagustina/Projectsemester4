@@ -3,7 +3,7 @@ session_start();
 if (empty($_SESSION['username']) AND empty($_SESSION['level'])) {
     echo "<center>Untuk mengakses halaman, Anda harus login <br>";
     echo "<a href=../index.php><b>LOGIN</b></a></center>";
-} else { 
+} else {
 include "../../lib/config_web.php";
 include "../../lib/koneksi.php";
 include "../../lib/pagination.php";
@@ -76,7 +76,7 @@ date_default_timezone_set('Asia/Jakarta');
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								<label for="id-pasien">Nama Barang</label>
+								<label for="id-barang">Nama Barang</label>
 								<input type="text" class="form-control" name="id_pasien" id="id-transaksi" required>
 							</div>
 						</div>
@@ -94,7 +94,7 @@ date_default_timezone_set('Asia/Jakarta');
 								<br>
 								<a href="#" class="btn btn-default" id="tambah">Tambah</a>
 							</div>
-						</div>			
+						</div>
 					</div>
 					<div class="col-md-8">
 						<div class="row">
@@ -134,43 +134,6 @@ date_default_timezone_set('Asia/Jakarta');
 					</div>
 				<hr>
 			</form>
-				<table class="table table-bordered" id="transaksi">
-					<thead>
-						<tr>
-							<td>No.</td>
-							<td>No Nota</td>
-							<td>ID Transaksi</td>
-							
-							<!-- <td>ID Pasien</td> -->
-							<td>Tanggal</td>
-							<td>Total Pembelian</td>
-							<td>Aksi</td>
-						</tr>
-					</thead>
-					<tbody>
-						<?php
-							$sql = mysqli_query($koneksi, "SELECT no_nota, kd_transaksi, tgl_penjualan, total_pembelian FROM transaksi GROUP BY no_nota ORDER BY id_transaksi DESC");
-							$no = 1;
-							while ($data = mysqli_fetch_array($sql)){
-						?>
-						<tr>
-							<td><?= $no ?></td>
-							<td><?= $data['no_nota'] ?></td>
-							<td><?= $data['kd_transaksi'] ?></td>
-							
-							<!-- <td><?= $data['id_pasien'] ?></td> -->
-							<td><?= $data['tgl_penjualan'] ?></td>
-							<td><?= $data['total_pembelian'] ?></td>
-							<td>
-								<a href="delete.php?id=<?=$data['no_nota']?>" onClick="return confirm('Hapus Data ?')" class="btn btn-danger">Delete</a>
-							</td>
-						</tr>
-						<?php
-						$no++;
-							}	
-						?>
-					</tbody>
-				</table>
 			</div>
 		</div>
 	</div>

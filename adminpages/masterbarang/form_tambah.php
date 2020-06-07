@@ -1,10 +1,10 @@
-<?php 
+<?php
 session_start();
 
 if (empty($_SESSION['username']) AND empty($_SESSION['level'])) {
     echo "<center>Untuk mengakses halaman, Anda harus login <br>";
     echo "<a href=../index.php><b>LOGIN</b></a></center>";
-} else { 
+} else {
 include "../../lib/config_web.php";
 include "../../lib/koneksi.php";
 
@@ -22,7 +22,7 @@ if($kodeBarang){
   $auto_kode="B001";
 }
 
-include "../templates/header.php"; 
+include "../templates/header.php";
 
  ?>
 
@@ -41,7 +41,7 @@ include "../templates/header.php";
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Form Tambah</h2>
-  
+
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -52,8 +52,9 @@ include "../templates/header.php";
                         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">ID Barang<span class="required">*</span>
                         </label>
                         <div class="col-md-10 col-sm-10 col-xs-12">
-                          <input type="text" id="first-name" name="id_barang" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $auto_kode;?>" readonly="readonly">
+                          <input type="text" id="first-name" name="id_barang" required="required" class="form-control col-md-7 col-xs-8" value="<?php echo $auto_kode;?>" readonly="readonly">
                         </div>
+                        <br>
 
 
                       <div class="form-group">
@@ -62,7 +63,7 @@ include "../templates/header.php";
                         <div class="col-md-10 col-sm-10 col-xs-12">
                           <input type="text" id="first-name" name="id_pembelian" required="required" class="form-control col-md-7 col-xs-12" >
                         </div>
-						
+
 						<label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">Nama Barang<span class="required">*</span>
                         </label>
                         <div class="col-md-10 col-sm-10 col-xs-12">
@@ -75,7 +76,7 @@ include "../templates/header.php";
                           <input type="number" id="first-name" name="harga_beli" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
 
-						
+
 						<label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">Harga Jual Satuan<span class="required"></span>
                         </label>
                         <div class="col-md-10 col-sm-10 col-xs-12">
@@ -89,13 +90,13 @@ include "../templates/header.php";
                         <div class="col-md-10 col-sm-10 col-xs-12">
                           <input type="text" id="first-name" name="stok" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
-						
-					
+
+
                         </div>
                       </div>
-             
-               
-           
+
+
+
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-3 col-sm-3 col-xs-12 col-md-offset-2">
