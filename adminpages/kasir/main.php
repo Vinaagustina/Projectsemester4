@@ -82,7 +82,7 @@ date_default_timezone_set('Asia/Jakarta');
 						</div>
 						<div class="col-md-1">
 							<div class="form-group">
-								<label for="qty">QTY</label>
+								<label for="qty">Jumlah</label>
 								<input type="number" class="form-control" min="1" name="qty" id="qty" required>
 							</div>
 						</div>
