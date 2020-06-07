@@ -106,7 +106,7 @@ date_default_timezone_set('Asia/Jakarta');
 									<span>Harga</span>
 								</div>
 								<div class="col-md-2">
-									<span>QTY</span>
+									<span>Jumlah</span>
 								</div>
 								<div class="col-md-3">
 									<span>Subtotal</span>
