@@ -16,7 +16,7 @@
 	exit();
 	// query untuk menyimpan ke tabel anggota
 	
-	$querySimpan = mysqli_query($koneksi, "INSERT INTO barang (id_barang, id_pembelian, nama_barang,harga_beli, harga_jualsatuan, stok) VALUES ('$id_barang','$id_pembelian','$nama_barang','$harga_beli','$harga_jualsatuan', '$stok')");
+	$querySimpan = mysqli_query($koneksi, "INSERT INTO barang VALUES ('$id_barang','$id_pembelian','$nama_barang','$harga_beli','$harga_jualsatuan', '$stok')");
 
 	// jika query berhasil maka akan tampil alert dan halaman akan kembali ke daftar kategori
 	if ($querySimpan) {

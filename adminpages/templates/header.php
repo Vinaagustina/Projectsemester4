@@ -60,7 +60,12 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-plus-square"></i> <span>ApotekLivina</span></a>
+              <a href="main.php" class="site_title">
+              <svg class="bi bi-handbag-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1a2 2 0 0 0-2 2v2H5V3a3 3 0 1 1 6 0v2h-1V3a2 2 0 0 0-2-2z"/>
+                <path d="M3.405 5a1.5 1.5 0 0 0-1.493 1.35L1 13.252A2.5 2.5 0 0 0 3.488 16h9.024A2.5 2.5 0 0 0 15 13.251l-.912-6.9A1.5 1.5 0 0 0 12.595 5H11v2.5a.5.5 0 1 1-1 0V5H6v2.5a.5.5 0 0 1-1 0V5H3.405z"/>
+              </svg>
+              <span>Livina Store</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -96,7 +101,7 @@
 				   <li><a href="<?php echo $admin_url; ?>kasir/main.php"><i class="fa fa-calculator"></i> Kasir </a></li>
            <!-- <li><a href="<?php echo $admin_url; ?>masterpasien/main.php"><i class="fa fa-user"></i> Master Pasien </a></li> -->
 				    <li><a href="<?php echo $admin_url; ?>masterbarang/main.php"><i class="fa fa-cubes"></i> Data Barang </a></li>
-            <li><a href="<?php echo $admin_url; ?>masterpembelian/main.php"><i class="fa fa-cubes"></i> Data Pembelian </a></li>
+            <li><a href="<?php echo $admin_url; ?>masterpembelian/main.php"><i class="fa fa-file"></i>Data Pembelian</a></li>
             <!-- <li><a href="<?php echo $admin_url; ?>masterresep/main.php"><i class="fa fa-file"></i> Master Resep </a></li> -->
 					 <li><a href="<?php echo $admin_url; ?>mastersupplier/main.php"><i class="fa fa-users"></i>Data Supplier </a></li>
 					  <li><a><i class="fa fa-table"></i>Laporan</a></li>
