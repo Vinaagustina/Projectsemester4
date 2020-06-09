@@ -82,64 +82,45 @@
             </div>
             <!-- /menu profile quick info -->
 
-            <br />
+            <br/>
 
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3></h3>
-                <ul class="nav side-menu">
-				<?php if($_SESSION['level']=="A"){ ?>
-				 <li><a href="<?php echo $admin_url; ?>home/main.php"><i class="fa fa-home"></i> Home </a></li>
-
-				    <li><a href="#"><i class="fa fa-table"></i> Laporan </a></li>
-					<li><a href="../logout.php"><i class="fa fa-sign-out"></i> LogOut </a></li>
-
-				<?php } else { ?>
-
-            <li><a href="<?php echo $admin_url; ?>home/main.php"><i class="fa fa-home"></i> Home </a></li>
-				   <li><a href="<?php echo $admin_url; ?>kasir/main.php"><i class="fa fa-calculator"></i> Kasir </a></li>
-           <!-- <li><a href="<?php echo $admin_url; ?>masterpasien/main.php"><i class="fa fa-user"></i> Master Pasien </a></li> -->
-				    <li><a href="<?php echo $admin_url; ?>masterbarang/main.php"><i class="fa fa-cubes"></i> Data Barang </a></li>
-            <li><a href="<?php echo $admin_url; ?>masterpembelian/main.php"><i class="fa fa-file"></i>Data Pembelian</a></li>
-            <!-- <li><a href="<?php echo $admin_url; ?>masterresep/main.php"><i class="fa fa-file"></i> Master Resep </a></li> -->
-					 <li><a href="<?php echo $admin_url; ?>mastersupplier/main.php"><i class="fa fa-users"></i>Data Supplier </a></li>
-					  <li><a><i class="fa fa-table"></i>Laporan</a></li>
-              <ul>
-              <li><a href="<?php echo $admin_url; ?>transaksi/main.php">Transaksi</a></li>
-              <li><a href="<?php echo $admin_url; ?>pembelian/main.php">Pembelian</a></li>
-              <!-- <li><a href="<?php echo $admin_url; ?>pasien/main.php">Pasien</a></li> -->
-              <li><a href="<?php echo $admin_url; ?>barang/main.php">Barang</a></li>
-              <!-- <li><a href="<?php echo $admin_url; ?>resep/main.php">Resep</a></li> -->
-              <li><a href="<?php echo $admin_url; ?>supplier/main.php">Supplier</a></li>
-              </ul>
-
-
-				   <!-- <li><a href="#"><i class="fa fa-user"></i> U</a></li> -->
-					<li><a href="../logout.php"><i class="fa fa-sign-out"></i> LogOut </a></li>
-				<?php } ?>
+                <ul class="nav side-menu" id="menu">
+				          <?php if($_SESSION['level']=="A"){ ?>
+				            <li><a href="<?php echo $admin_url; ?>home/main.php"><i class="fa fa-home"></i> Home </a></li>
+                    <li><a href="#"><i class="fa fa-table"></i> Laporan </a></li>
+                    <li><a href="../logout.php"><i class="fa fa-sign-out"></i> LogOut </a></li>
+                  <?php } else { ?>
+                    <li><a href="<?php echo $admin_url; ?>home/main.php"><i class="fa fa-home"></i> Home </a></li>
+                    <li><a href="<?php echo $admin_url; ?>kasir/main.php"><i class="fa fa-calculator"></i> Kasir </a></li><li><a href="<?php echo $admin_url; ?>masterbarang/main.php"><i class="fa fa-cubes"></i> Data Barang </a></li>
+                    <li><a href="<?php echo $admin_url; ?>masterpembelian/main.php"><i class="fa fa-file"></i>Data Pembelian</a></li>
+                    <li><a href="<?php echo $admin_url; ?>mastersupplier/main.php"><i class="fa fa-users"></i>Data Supplier </a></li>
+                    <li><a><i class="fa fa-table"></i>Laporan</a>
+                    <ul>
+                      <li><a href="<?php echo $admin_url; ?>transaksi/main.php">Transaksi</a></li>
+                      <li><a href="<?php echo $admin_url; ?>pembelian/main.php">Pembelian</a></li>
+                      <li><a href="<?php echo $admin_url; ?>barang/main.php">Barang</a></li>
+                      <li><a href="<?php echo $admin_url; ?>supplier/main.php">Supplier</a></li>
+                    </ul></li>
+                    <li><a href="../logout.php"><i class="fa fa-sign-out"></i> LogOut </a></li>
+                    <?php } ?>
                 </ul>
               </div>
-
-
             </div>
-            <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
 
             <!-- /menu footer buttons -->
           </div>
         </div>
-
-        <!-- top navigation -->
-        <div class="top_nav">
-          <div class="nav_menu">
-            <nav>
-              <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-              </div>
-
-            </nav>
-          </div>
+      </div>
+      <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <nav>
+            <div class="nav toggle">
+              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+          </nav>
         </div>
-        <!-- /top navigation -->
+      </div>
