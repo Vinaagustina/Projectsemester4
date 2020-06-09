@@ -50,8 +50,8 @@ include "../templates/header.php"; ?>
 
                 <div class="row x_title">
                   <div class="col-md-6">
-                    <h3>Grafik Anggota Aktif</h3>
-					<h3><small>Data Anggota KSP Setya Karya</small></h3>
+                    <h3>Grafik Data Livina Store</h3>
+					<!-- <h3><small>Data Anggota KSP Setya Karya</small></h3> -->
                   </div>
                   <div class="col-md-6">
                     <!-- <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
@@ -126,7 +126,7 @@ include "../templates/header.php"; ?>
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="x_panel tile fixed_height_320">
                 <div class="x_title">
-                  <h2>App Versions</h2>
+                  <h2>Data Penjualan </h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -145,7 +145,7 @@ include "../templates/header.php"; ?>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <h4>App Usage across versions</h4>
+                  <!-- <h4>App Usage across versions</h4> -->
                   <div class="widget_summary">
                     <div class="w_left w_25">
                       <span>0.1.5.2</span>
@@ -235,7 +235,7 @@ include "../templates/header.php"; ?>
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="x_panel tile fixed_height_320 overflow_hidden">
                 <div class="x_title">
-                  <h2>Device Usage</h2>
+                  <h2>Jenis Tas Terlaris</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -276,31 +276,31 @@ include "../templates/header.php"; ?>
                         <table class="tile_info">
                           <tr>
                             <td>
-                              <p><i class="fa fa-square blue"></i>IOS </p>
+                              <p><i class="fa fa-square blue"></i>Tote Bag</p>
                             </td>
                             <td>30%</td>
                           </tr>
                           <tr>
                             <td>
-                              <p><i class="fa fa-square green"></i>Android </p>
+                              <p><i class="fa fa-square green"></i>Sling Bag </p>
                             </td>
                             <td>10%</td>
                           </tr>
                           <tr>
                             <td>
-                              <p><i class="fa fa-square purple"></i>Blackberry </p>
+                              <p><i class="fa fa-square purple"></i>Backpack </p>
                             </td>
                             <td>20%</td>
                           </tr>
                           <tr>
                             <td>
-                              <p><i class="fa fa-square aero"></i>Symbian </p>
+                              <p><i class="fa fa-square aero"></i>Hand Bag </p>
                             </td>
                             <td>15%</td>
                           </tr>
                           <tr>
                             <td>
-                              <p><i class="fa fa-square red"></i>Others </p>
+                              <p><i class="fa fa-square red"></i>Waist Bag </p>
                             </td>
                             <td>30%</td>
                           </tr>
@@ -313,10 +313,10 @@ include "../templates/header.php"; ?>
             </div>
 
 
-            <div class="col-md-4 col-sm-4 col-xs-12">
+            <!-- <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="x_panel tile fixed_height_320">
-                <div class="x_title">
-                  <h2>Quick Settings</h2>
+                <div class="x_title"> -->
+                  <!-- <h2>Quick Settings</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -349,9 +349,9 @@ include "../templates/header.php"; ?>
                       </li>
                       <li><i class="fa fa-area-chart"></i><a href="#">Logout</a>
                       </li>
-                    </ul>
+                    </ul> -->
 
-                    <div class="sidebar-widget">
+                    <!-- <div class="sidebar-widget">
                       <h4>Profile Completion</h4>
                       <canvas width="150" height="80" id="foo" class="" style="width: 160px; height: 100px;"></canvas>
                       <div class="goal-wrapper">
@@ -359,7 +359,7 @@ include "../templates/header.php"; ?>
                         <span id="gauge-text" class="gauge-value pull-left">3,200</span>
                         <span id="goal-text" class="goal-value pull-right">$5,000</span>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
