@@ -7,7 +7,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="templates/dropdown.css" rel="stylesheet" type="text/css" media="screen">
 
     <title>Apotek Livina</title>
 
@@ -88,8 +87,7 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3></h3>
-                <ul class="nav side-menu">
+                <ul class="nav side-menu" id="menu">
 				          <?php if($_SESSION['level']=="A"){ ?>
 				            <li><a href="<?php echo $admin_url; ?>home/main.php"><i class="fa fa-home"></i> Home </a></li>
                     <li><a href="#"><i class="fa fa-table"></i> Laporan </a></li>
@@ -99,13 +97,13 @@
                     <li><a href="<?php echo $admin_url; ?>kasir/main.php"><i class="fa fa-calculator"></i> Kasir </a></li><li><a href="<?php echo $admin_url; ?>masterbarang/main.php"><i class="fa fa-cubes"></i> Data Barang </a></li>
                     <li><a href="<?php echo $admin_url; ?>masterpembelian/main.php"><i class="fa fa-file"></i>Data Pembelian</a></li>
                     <li><a href="<?php echo $admin_url; ?>mastersupplier/main.php"><i class="fa fa-users"></i>Data Supplier </a></li>
-                    <li id="dropdown"><a><i class="fa fa-table"></i>Laporan</a></li>
-                    <ul id="isi-dropdown">
+                    <li><a><i class="fa fa-table"></i>Laporan</a>
+                    <ul>
                       <li><a href="<?php echo $admin_url; ?>transaksi/main.php">Transaksi</a></li>
                       <li><a href="<?php echo $admin_url; ?>pembelian/main.php">Pembelian</a></li>
                       <li><a href="<?php echo $admin_url; ?>barang/main.php">Barang</a></li>
                       <li><a href="<?php echo $admin_url; ?>supplier/main.php">Supplier</a></li>
-                    </ul>
+                    </ul></li>
                     <li><a href="../logout.php"><i class="fa fa-sign-out"></i> LogOut </a></li>
                     <?php } ?>
                 </ul>
