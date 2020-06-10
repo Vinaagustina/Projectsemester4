@@ -59,16 +59,16 @@ $query = "SELECT max(id_orders) as maxKode FROM order_telepon";
 $hasil = $connect->query($query);
 $data = mysqli_fetch_array($hasil);
 $kodePesan = $data['maxKode'];
- 
+
 // mengambil angka atau bilangan dalam kode anggota terbesar,
 // dengan cara mengambil substring mulai dari karakter ke-1 diambil 6 karakter
 // misal 'BRG001', akan diambil '001'
 // setelah substring bilangan diambil lantas dicasting menjadi integer
 $noUrut = (int) substr($kodePesan, 9, 3);
- 
+
 // bilangan yang diambil ini ditambah 1 untuk menentukan nomor urut berikutnya
 $noUrut++;
- 
+
 // membentuk kode anggota baru
 // perintah sprintf("%03s", $noUrut); digunakan untuk memformat string sebanyak 3 karakter
 // misal sprintf("%03s", 12); maka akan dihasilkan '012'
@@ -87,7 +87,7 @@ $jam_skrg = date("H:i:s");
 // simpan data detail pemesanan
 for ($i = 0; $i < $jml; $i++) {
 
-    $connect->query("INSERT INTO order_telepon(id_orders, product_id, jumlah, id_customer , id_ekspedisi, bank ,tgl_order, jam_order, status) 
+    $connect->query("INSERT INTO order_telepon(id_orders, product_id, jumlah, id_customer , id_ekspedisi, bank ,tgl_order, jam_order, status)
                    VALUES('$id_orders',{$isikeranjang[$i]['id_barang']}, {$isikeranjang[$i]['qty']}, '$id_customer', '$ekspedisi', '$bank', NOW(), '$jam_skrg', 1)");
 
     $connect->query("UPDATE barang SET stock=stock - {$isikeranjang[$i]['qty']}, total_terjual =  total_terjual+{$isikeranjang[$i]['qty']} WHERE id={$isikeranjang[$i]['id_barang']}");
@@ -106,8 +106,8 @@ for ($i = 0; $i < $jml; $i++) {
 // echo "sukses";
 // die;
 //exit();
-$daftarproduk = $connect->query("SELECT * 
-	FROM customer  
+$daftarproduk = $connect->query("SELECT *
+	FROM customer
 	WHERE  id_customer = '$id_customer'
 	");
 
@@ -125,9 +125,9 @@ $lihat = mysqli_fetch_array($daftarproduk);
 
         <div class="col-md-7">
         <div id="struk">
-             <div style="width:487px; 
-                padding:0 10px 20px 10px; 
-                margin:0 auto; 
+             <div style="width:487px;
+                padding:0 10px 20px 10px;
+                margin:0 auto;
                 background:#ffffff; color:#4d4d4d;
                  font:13px /1.5 Tahoma; border:4px double #dddddd;">
                 <table cellpadding="0" cellspacing="0" border="0">
@@ -137,17 +137,17 @@ $lihat = mysqli_fetch_array($daftarproduk);
                             <td valign="top"
                                 style="width:150px; padding:10px 0; border-bottom:4px double #dddddd;text-align: center;">
                                 <!-- <h1>LOGO</h1> -->
-                                <img src="assets/images/putih.jpg" alt="" style="width: 100%; height: auto;"/>
+                                <img src="assets/images/logo.png" alt="" style="width: 100%; height: auto;"/>
                             </td>
 
 
                             <td colspan="2" valign="top"
                                 style="width:340px; padding:10px 0; border-bottom:4px double #dddddd; text-align:center; font-size:15px; line-height:16px;     padding-top: 20px;">
-                                TOKO SALSA (OLEH-OLEH HAJI & UMROH)<br>
-                                Jl. LANTAI 3 A, BLOK F 36, NO 07 <br>
-                                KEBON KACANG RAYA, KB MELATI, <BR>
-                                TANAH ABANG, JAKARTA BARAT, DKI JAKARTA<br>
-                                TLP. 0813-1535-8266<br>
+                                LIVINA STORE<br>
+                                Jl. MERPATI PUTIH, BLOK F 12, NO 170 <br>
+                                SUMBERSARI, KB JEMBER, <BR>
+                                JAWA TIMUR<br>
+                                TLP. 0852-1221-3423<br>
                             </td>
                         </tr>
 
@@ -155,15 +155,15 @@ $lihat = mysqli_fetch_array($daftarproduk);
                             <td colspan="2" valign="top" style="width:100px; padding:10px 0 0 0; font-size:15px; ">
                                No Nota : <?php echo $id_orders; ?> </td>
                              <td valign="top" style="width:100px; padding:10px 0 0 0;font-size:15px; "> KASIR : ADMIN
-                          
+
                             </td>
-                            
+
                         </tr>
                             <?php
 
                         //exit();
-                        $CetakNota = $connect->query("SELECT * FROM order_telepon,barang 
-                                     WHERE order_telepon.product_id=barang.id 
+                        $CetakNota = $connect->query("SELECT * FROM order_telepon,barang
+                                     WHERE order_telepon.product_id=barang.id
                                      AND id_orders='$id_orders' AND id_customer = '$id_customer' ");
                         $totalcetak = 0;
                         $itemcetak = 0;
@@ -193,20 +193,20 @@ $lihat = mysqli_fetch_array($daftarproduk);
                         </tr>
                          <tr>
                             <td></td>
-                            <td valign="top" style="width:100px; padding:10px 0 0 0;font-size:15px; ">Netto</td>
+                            <td valign="top" style="width:100px; padding:10px 0 0 0;font-size:15px; ">Total</td>
                             <td valign="top" style="width:100px; padding:10px 0 0 0;font-size:15px;text-align: right; ">
                                 Rp. <?php echo number_format($totalcetak, 0, ',', '.'); ?> </td>
                         </tr>
 
                         <tr>
                             <td></td>
-                            <td valign="top" style="width:100px; padding:3px 0 0 0;font-size:15px; ">Cash</td>
+                            <td valign="top" style="width:100px; padding:3px 0 0 0;font-size:15px; ">Bayar</td>
                             <td valign="top" style="width:100px; padding:3px 0 0 0;font-size:15px;text-align: right; ">
                                 Rp. <?php echo number_format(str_replace(".", "", $_POST['cash']), 0, ',', '.'); ?></td>
                         </tr>
                         <tr><td colspan="3" valign="top"
                                 style="text-align: center;width:100px; border-bottom:1px; padding:10px 0 0 0;font-size:15px; ">
-                                
+
                             </td></tr>
                         <tr>
                             <td></td>
@@ -220,12 +220,12 @@ $lihat = mysqli_fetch_array($daftarproduk);
                         </tr>
                         <tr><td colspan="3" valign="top"
                                 style="text-align: center;width:100px; border-bottom:0px; padding:10px 0 0 0;font-size:15px; "><br><br><br>
-                                
+
                             </td></tr>
                         <tr>
                             <td valign="top"
                                style="width:100px; padding:3px 0 0 0;font-size:15px;">
-                                Nama Pembeli: 
+                                Nama Pembeli:
                             </td>
                             <td colspan="2" valign="top"
                                 style="width:100px; font-size:15px;text-align: left; ">
@@ -258,7 +258,7 @@ $lihat = mysqli_fetch_array($daftarproduk);
                                 style="width:100px; padding:10px 0 0 0;font-size:15px;text-align: left; ">
                                 <?=$lihat['prov'];?>
                             </td>
-                            
+
                         </tr>
 
                         <tr>
@@ -274,7 +274,7 @@ $lihat = mysqli_fetch_array($daftarproduk);
                              <td  valign="top"
                                 style="width:100px; padding:10px 0 0 0;font-size:15px;text-align: left; ">
                                 No Telepon:
-                            </td> 
+                            </td>
                             <td  valign="top"
                                 style="width:100px; padding:10px 0 0 0;font-size:15px;text-align: left; ">
                                 <?=$lihat['no_telepon'];?>
@@ -288,11 +288,10 @@ $lihat = mysqli_fetch_array($daftarproduk);
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="3" style="text-align: center;font-size:15px; ">BARANG YANG SUDAH DIBELI</td>
+                            <td colspan="3" style="text-align: center;font-size:15px; ">BARANG YANG SUDAH DIBELI TIDAK DAPAT DIKEMBALIKAN</td>
                         </tr>
                         <tr>
-                            <td colspan="3" style="text-align: center;font-size:15px; ">TIDAK DAPAT
-                                DITUKAR/DIKEMBALIKAN
+                            <td colspan="3" style="text-align: center;font-size:15px; ">TERIMA KASIH
                             </td>
                         </tr>
 
@@ -316,14 +315,13 @@ $lihat = mysqli_fetch_array($daftarproduk);
 
                                             <button> <a href="index.php?hal=via_telpon"> KEMBALI KE APLIKASI </button></a>
                                             </center>
-                                           
-                                        
+
+
      </form>
 
     </div>
-        
+
             <!-- struk end -->
         </div>
     </div>
 </div>
-

@@ -54,27 +54,9 @@ error_reporting(0);
                     </div>
                 </div>
             </div>
-        </a><!-- 
-        <a href="?hal=coming" style="color: #fff;">
-            <div class="col-md-3">
-                <div class="panel yellow-bg">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <i class="fa fa-bar-chart-o"></i>
-                            </div>
-                            <div class="col-xs-8">
-                                <span class="state-title">Laporan  </span>
-                                <h4>Laporan</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-    </a> -->
 
-    <div class="row">
+
+    <!-- <div class="row">
 
         <div class="col-sm-6">
             <section class="panel">
@@ -220,7 +202,7 @@ error_reporting(0);
                             period: '2017-05-31',
                             Rp: 0,
                             Transaksi: '0'
-                        }];
+                        }]; -->
                     </script>
 
 
