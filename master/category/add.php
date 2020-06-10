@@ -14,15 +14,15 @@ if (isset($_POST['simpan'])) {
         <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-                    TAMBAH JENIS TAS
+                    TAMBAH KATEGORI
                 </header>
                 <div class="panel-body">
                     <div class=" form">
                         <form class="cmxform form-horizontal adminex-form" id="commentForm" method="POST"
                               enctype="multipart/form-data" action="">
                             <div class="form-group ">
-                                <label for="cname" class="control-label col-lg-2" style="text-align: left;">
-                                  Jenis Tas</label>
+                                <label for="cname" class="control-label col-lg-2" style="text-align: left;">Nama
+                                    Kategori</label>
                                 <div class="col-lg-6">
                                     <input class=" form-control" id="cname" name="category_name" minlength="2"
                                            type="text" required/>

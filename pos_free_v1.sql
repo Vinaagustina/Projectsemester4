@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Jun 2020 pada 17.04
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.3.17
+-- Generation Time: Jul 02, 2019 at 04:24 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -24,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang`
+-- Table structure for table `barang`
 --
 
 CREATE TABLE `barang` (
@@ -40,18 +39,18 @@ CREATE TABLE `barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `barang`
+-- Dumping data for table `barang`
 --
 
 INSERT INTO `barang` (`id`, `kdbrg`, `nmbrg`, `harga`, `stock`, `tanggal`, `category_id`, `id_satuan`, `total_terjual`) VALUES
 (5, 'ZAM01', 'ZAM ZAM', 600000, 6, '2019-06-18 18:14:19', 31, 2, '3'),
-(7, 'KRM005', 'Kurma 1', 200000, 23, '2019-06-18 20:05:56', 23, 1, '2'),
-(8, '0889988', 'Sling Bag  Yihao', 30000, 38, '2019-06-24 17:47:54', 31, 1, '14');
+(7, 'KRM005', 'Kurma 1', 200000, 1, '2019-06-18 20:05:56', 23, 1, '1'),
+(8, '0889988', 'AIR MINERAL', 400000, 45, '2019-06-24 17:47:54', 31, 2, '7');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -61,18 +60,18 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`category_id`, `category_name`, `category_status`) VALUES
-(23, 'Tote Bag', 'Y'),
-(31, 'Sling Bag', 'Y'),
-(33, 'Hand Bag', 'Y');
+(23, 'Makanan', 'Y'),
+(31, 'Minuman', 'Y'),
+(32, 'Aksesoris', 'Y');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `customer`
+-- Table structure for table `customer`
 --
 
 CREATE TABLE `customer` (
@@ -88,7 +87,7 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `customer`
+-- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`id_customer`, `nama_pembeli`, `alamat_pembeli`, `kelurahan`, `kecamatan`, `kabkot`, `prov`, `no_telepon`, `tanggal`) VALUES
@@ -99,7 +98,7 @@ INSERT INTO `customer` (`id_customer`, `nama_pembeli`, `alamat_pembeli`, `kelura
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ekspedisi`
+-- Table structure for table `ekspedisi`
 --
 
 CREATE TABLE `ekspedisi` (
@@ -108,7 +107,7 @@ CREATE TABLE `ekspedisi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `ekspedisi`
+-- Dumping data for table `ekspedisi`
 --
 
 INSERT INTO `ekspedisi` (`id_ekspedisi`, `nmekspedisi`) VALUES
@@ -119,7 +118,7 @@ INSERT INTO `ekspedisi` (`id_ekspedisi`, `nmekspedisi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `keranjang`
+-- Table structure for table `keranjang`
 --
 
 CREATE TABLE `keranjang` (
@@ -134,7 +133,7 @@ CREATE TABLE `keranjang` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `keranjang_telepon`
+-- Table structure for table `keranjang_telepon`
 --
 
 CREATE TABLE `keranjang_telepon` (
@@ -149,7 +148,7 @@ CREATE TABLE `keranjang_telepon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `keranjang_telepon`
+-- Dumping data for table `keranjang_telepon`
 --
 
 INSERT INTO `keranjang_telepon` (`id_keranjang`, `id_barang`, `id_session`, `id_customer`, `tgl_keranjang`, `jam_keranjang`, `qty`, `status`) VALUES
@@ -162,7 +161,7 @@ INSERT INTO `keranjang_telepon` (`id_keranjang`, `id_barang`, `id_session`, `id_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `orders_detail`
+-- Table structure for table `orders_detail`
 --
 
 CREATE TABLE `orders_detail` (
@@ -174,24 +173,19 @@ CREATE TABLE `orders_detail` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data untuk tabel `orders_detail`
+-- Dumping data for table `orders_detail`
 --
 
 INSERT INTO `orders_detail` (`id_orders`, `product_id`, `jumlah`, `tgl_order`, `jam_order`) VALUES
 ('PSN190702001', 8, 1, '2019-07-02 11:29:34', '11:29:34'),
 ('PSN190702002', 8, 1, '2019-07-02 11:29:50', '11:29:50'),
 ('PSN190702003', 8, 3, '2019-07-02 13:12:07', '13:12:07'),
-('PSN190702003', 5, 1, '2019-07-02 13:12:07', '13:12:07'),
-('PSN200610004', 8, 2, '2020-06-10 20:51:05', '20:51:05'),
-('PSN200610004', 7, 1, '2020-06-10 20:51:05', '20:51:05'),
-('PSN200610005', 8, 3, '2020-06-10 21:52:01', '21:52:01'),
-('PSN200610006', 8, 1, '2020-06-10 21:56:35', '21:56:35'),
-('PSN200610007', 8, 1, '2020-06-10 21:57:10', '21:57:10');
+('PSN190702003', 5, 1, '2019-07-02 13:12:07', '13:12:07');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `order_telepon`
+-- Table structure for table `order_telepon`
 --
 
 CREATE TABLE `order_telepon` (
@@ -207,7 +201,7 @@ CREATE TABLE `order_telepon` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ROW_FORMAT=DYNAMIC;
 
 --
--- Dumping data untuk tabel `order_telepon`
+-- Dumping data for table `order_telepon`
 --
 
 INSERT INTO `order_telepon` (`id_orders`, `product_id`, `jumlah`, `id_customer`, `id_ekspedisi`, `bank`, `tgl_order`, `jam_order`, `status`) VALUES
@@ -242,7 +236,7 @@ INSERT INTO `order_telepon` (`id_orders`, `product_id`, `jumlah`, `id_customer`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `satuan`
+-- Table structure for table `satuan`
 --
 
 CREATE TABLE `satuan` (
@@ -251,22 +245,23 @@ CREATE TABLE `satuan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `satuan`
+-- Dumping data for table `satuan`
 --
 
 INSERT INTO `satuan` (`id_satuan`, `nmsatuan`) VALUES
-(1, 'Ecer/PCS'),
-(2, 'Lusinan');
+(1, 'KG'),
+(2, 'Liter'),
+(3, 'PCS');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `user_id` int(10) NOT NULL,
-  `user_foto` text DEFAULT NULL,
+  `user_foto` text,
   `user_name` varchar(255) DEFAULT NULL,
   `user_username` varchar(40) NOT NULL,
   `user_password` varchar(250) NOT NULL,
@@ -276,7 +271,7 @@ CREATE TABLE `user` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_id`, `user_foto`, `user_name`, `user_username`, `user_password`, `user_level`, `user_create_date`, `user_status`) VALUES
@@ -289,7 +284,7 @@ INSERT INTO `user` (`user_id`, `user_foto`, `user_name`, `user_username`, `user_
 --
 
 --
--- Indeks untuk tabel `barang`
+-- Indexes for table `barang`
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`id`),
@@ -299,117 +294,108 @@ ALTER TABLE `barang`
   ADD KEY `id_satuan` (`id_satuan`);
 
 --
--- Indeks untuk tabel `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Indeks untuk tabel `customer`
+-- Indexes for table `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`id_customer`);
 
 --
--- Indeks untuk tabel `ekspedisi`
+-- Indexes for table `ekspedisi`
 --
 ALTER TABLE `ekspedisi`
   ADD PRIMARY KEY (`id_ekspedisi`);
 
 --
--- Indeks untuk tabel `keranjang`
+-- Indexes for table `keranjang`
 --
 ALTER TABLE `keranjang`
   ADD PRIMARY KEY (`id_keranjang`),
   ADD KEY `id_barang` (`id_barang`);
 
 --
--- Indeks untuk tabel `keranjang_telepon`
+-- Indexes for table `keranjang_telepon`
 --
 ALTER TABLE `keranjang_telepon`
   ADD PRIMARY KEY (`id_keranjang`);
 
 --
--- Indeks untuk tabel `satuan`
+-- Indexes for table `satuan`
 --
 ALTER TABLE `satuan`
   ADD PRIMARY KEY (`id_satuan`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `barang`
+-- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
--- AUTO_INCREMENT untuk tabel `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
-
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
--- AUTO_INCREMENT untuk tabel `customer`
+-- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
   MODIFY `id_customer` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
--- AUTO_INCREMENT untuk tabel `ekspedisi`
+-- AUTO_INCREMENT for table `ekspedisi`
 --
 ALTER TABLE `ekspedisi`
   MODIFY `id_ekspedisi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
--- AUTO_INCREMENT untuk tabel `keranjang`
+-- AUTO_INCREMENT for table `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT untuk tabel `keranjang_telepon`
+-- AUTO_INCREMENT for table `keranjang_telepon`
 --
 ALTER TABLE `keranjang_telepon`
   MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
--- AUTO_INCREMENT untuk tabel `satuan`
+-- AUTO_INCREMENT for table `satuan`
 --
 ALTER TABLE `satuan`
   MODIFY `id_satuan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+--
+-- Constraints for dumped tables
+--
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
---
-
---
--- Ketidakleluasaan untuk tabel `barang`
+-- Constraints for table `barang`
 --
 ALTER TABLE `barang`
   ADD CONSTRAINT `barang_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `barang_ibfk_2` FOREIGN KEY (`id_satuan`) REFERENCES `satuan` (`id_satuan`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `keranjang`
+-- Constraints for table `keranjang`
 --
 ALTER TABLE `keranjang`
   ADD CONSTRAINT `keranjang_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -18,7 +18,8 @@ require __DIR__.'/vendor/autoload.php';
 
 
 use Spipu\Html2Pdf\Html2Pdf;
-$html2pdf = new Html2Pdf('P', 'A4', 'en');
+$html2pdf = new Html2Pdf('P', 'A5', 'en');
     $html2pdf->setDefaultFont('Arial');
     $html2pdf->writeHTML($content);
     $html2pdf->output('example.pdf');
+

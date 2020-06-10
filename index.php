@@ -18,7 +18,8 @@ if (!empty($_SESSION["username"]) && !empty($_SESSION['password'])) {
         <meta name="author" content="ThemeBucket">
         <link rel="shortcut icon" href="#" type="assets/image/png">
 
-        <title>TOKO SAYA</title>
+        <title>Livina Store</title>
+        <link rel="icon" href="assets/images/logo.ico">
         <!--icheck-->
 
         <!--   
@@ -53,7 +54,7 @@ if (!empty($_SESSION["username"]) && !empty($_SESSION['password'])) {
         <link rel="stylesheet" href="assets/js/morris-chart/morris.css">
 
         <!--common-->
-        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/css.css" rel="stylesheet">
         <link href="assets/css/style-responsive.css" rel="stylesheet">
 
         <script src="js/html5shiv.js"></script>

@@ -1,14 +1,9 @@
-
-
-<div class="left-side sticky-left-side">
+    <div class="left-side sticky-left-side">
     <!--logo and iconic logo start-->
     <div class="logo">
-
-       <!-- <a href="index.php"><img src="assets/images/logo.png" alt=""></a>-->
-    </div>
-
-    <div class="logo-icon text-center">
-        <!--<a href="index.php"><img src="assets/images/logo_icon.png" alt=""></a>-->
+        <a href="index.php"><img src="assets/images/logo.png" alt="">
+        <p>LIVINA STORE</p>
+        </a>
     </div>
     <!--logo and iconic logo end-->
 
@@ -22,7 +17,7 @@
                 <a href="#"><i class="fa fa-th-list"></i> <span>Master</span></a>
                 <ul class="sub-menu-list">
                     <li <?php echo $data[1] == 'category' ? 'class=active' : ''; ?>><a href="?hal=master/category/list"><i
-                                    class="fa fa-list"></i>Kategori Jenis Tas</a></li>
+                                    class="fa fa-list"></i>Kategori</a></li>
                     <li <?php echo $data[1] == 'satuan' ? 'class=active' : ''; ?>><a href="?hal=master/satuan/list"><i
                                     class="fa fa-tachometer"></i>Satuan</a></li>
                     <li <?php echo $data[1] == 'barang' ? 'class=active' : ''; ?>><a href="?hal=master/barang/list"><i
@@ -62,17 +57,15 @@
                 <a href="#"><i class="fa fa-file"></i> <span>Laporan</span></a>
                 <ul class="sub-menu-list">
                     <li <?php echo $data[1] == 'laporan_stock' ? 'class=active' : ''; ?>><a
-                                href="laporan_product.php" target="_blank"> <i class="fa fa-bar-chart-o"></i>Laporan Product Terlaris</a>
+                                href="laporan_product.php" target="_blank"> <i class="fa fa-bar-chart-o"></i>Produk Terlaris</a>
                     </li>
                     <li <?php echo $data[1] == 'laporan_product' ? 'class=active' : ''; ?>><a
-                                href="laporan_transaksi_langsung.php" target="_blank"> <i class="fa fa-bar-chart-o"></i>Laporan Transaksi Langsung</a>
+                                href="laporan_transaksi_langsung.php" target="_blank"> <i class="fa fa-bar-chart-o"></i>Transaksi Langsung</a>
                     </li>
                     <li <?php echo $data[1] == 'laporan_transaksi' ? 'class=active' : ''; ?>><a
-                                href="laporan_transaksi_telepon.php" target="_blank"> <i class="fa fa-bar-chart-o"></i>Laporan
-                            Transaksi Telepon Lunas</a></li>
+                                href="laporan_transaksi_telepon.php" target="_blank"> <i class="fa fa-bar-chart-o"></i>Transaksi Telepon Lunas</a></li>
                     <li <?php echo $data[1] == 'laporan_transaksi' ? 'class=active' : ''; ?>><a
-                                href="laporan_transaksi_pending.php" target="_blank"> <i class="fa fa-bar-chart-o"></i>Laporan
-                            Transaksi Telepon Pending</a></li>
+                                href="laporan_transaksi_pending.php" target="_blank"> <i class="fa fa-bar-chart-o"></i>Transaksi Telepon Pending</a></li>
                 </ul>
             </li>
             <li><a href="logout.php"><i class="fa fa-sign-in"></i> <span>Logout</span></a></li>
