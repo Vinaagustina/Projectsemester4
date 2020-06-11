@@ -16,12 +16,14 @@
             <li class="menu-list <?php echo ($data[1] == 'barang' || $data[1] == 'category' || $data[1] == 'satuan' || $data[1] == 'ekspedisi' ) ? 'nav-active' : ''; ?>">
                 <a href="#"><i class="fa fa-th-list"></i> <span>Master</span></a>
                 <ul class="sub-menu-list">
+                    <li <?php echo $data[1] == 'barang' ? 'class=active' : ''; ?>><a href="?hal=master/barang/list"><i
+                                    class="fa fa-briefcase"></i> Barang</a></li>
+                    <li <?php echo $data[1] == 'supplier' ? 'class=active' : ''; ?>><a href="?hal=master/supplier/list"><i
+                                    class="fa fa-briefcase"></i> Supplier</a></li>
                     <li <?php echo $data[1] == 'category' ? 'class=active' : ''; ?>><a href="?hal=master/category/list"><i
                                     class="fa fa-list"></i>Kategori</a></li>
                     <li <?php echo $data[1] == 'satuan' ? 'class=active' : ''; ?>><a href="?hal=master/satuan/list"><i
                                     class="fa fa-tachometer"></i>Satuan</a></li>
-                    <li <?php echo $data[1] == 'barang' ? 'class=active' : ''; ?>><a href="?hal=master/barang/list"><i
-                                    class="fa fa-briefcase"></i> Barang</a></li>
                     <li <?php echo $data[1] == 'ekspedisi' ? 'class=active' : ''; ?>><a href="?hal=master/ekspedisi/list"> <i
                                     class="fa fa-plane"> </i>Ekspedisi</a></li>
                 </ul>

@@ -1,9 +1,9 @@
 <?php
 if (isset($_GET['hapus'])) {
    // $queryHapus = mysql_query("DELETE FROM category where category_id = '" . $_GET['hapus'] . "'");
-    $queryHapus = $connect->query("DELETE FROM category where category_id = '" . $_GET['hapus'] . "'");
+    $queryHapus = $connect->query("DELETE FROM supplier where id = '" . $_GET['hapus'] . "'");
     if ($queryHapus) {
-        echo "<script> alert('Data Berhasil Dihapus'); location.href='index.php?hal=master/category/list' </script>";
+        echo "<script> alert('Data Berhasil Dihapus'); location.href='index.php?hal=master/supplier/list' </script>";
         exit;
     }
 }
@@ -13,7 +13,7 @@ if (isset($_GET['hapus'])) {
         <div class="col-sm-12">
             <section class="panel">
                 <header class="panel-heading">
-                    Data Kategori
+                    Data Supplier
                     <span class="tools pull-right">
                         <a href="javascript:;" class="fa fa-chevron-down"></a>
                         <a href="javascript:;" class="fa fa-times"></a>
@@ -24,9 +24,9 @@ if (isset($_GET['hapus'])) {
                         <div class="clearfix">
                             <div class="btn-group">
 
-                                <a href="?hal=master/category/add">
+                                <a href="?hal=master/supplier/add">
                                     <button data-toggle="modal" class="btn btn-primary">
-                                        Tambah Kategori <i class="fa fa-plus"></i>
+                                        Tambah Supplier <i class="fa fa-plus"></i>
                                     </button>
                                 </a>
                             </div>
@@ -44,8 +44,10 @@ if (isset($_GET['hapus'])) {
                         <table class="table table-striped table-hover table-bordered" id="editable-sample">
                             <thead>
                             <tr>
-                                <th>Nama Kategori</th>
-                                <th>Status</th>
+                                <th>Nama Supplier</th>
+                                <th>Alamat</th>
+                                <th>Telpon</th>
+                                <th>Keterangan</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -53,29 +55,21 @@ if (isset($_GET['hapus'])) {
                             <?php
                             $no = 0;
                             //$queryCategory = mysql_query("SELECT * FROM category ORDER BY category_id DESC");
-                            $queryCategory = $connect->query("SELECT * FROM category ORDER BY category_id DESC");
-                            while ($rowCategory = mysqli_fetch_array($queryCategory)) {
+                            $querySupplier = $connect->query("SELECT * FROM supplier ORDER BY id DESC");
+                            while ($rowSupplier = mysqli_fetch_array($querySupplier)) {
                                 ?>
                                 <tr class="">
-                                    <td><?php echo $rowCategory['category_name']; ?></td>
-                                    <td><?php if ($rowCategory['category_status'] == 'Y') { ?>
-                                            <button class="btn btn-success" type="submit"><i
-                                                        class="fa fa-check-square-o"></i> Active
-                                            </button>
-                                        <?php } else { ?>
-                                            <button class="btn btn-danger" type="submit"><i class="fa fa-ban"></i> Not
-                                                Active
-                                            </button>
-
-                                        <?php } ?>
-                                    </td>
+                                    <td><?php echo $rowSupplier['nama']; ?></td>
+                                    <td><?php echo $rowSupplier['alamat']; ?></td>
+                                    <td><?php echo $rowSupplier['telpon']; ?></td>
+                                    <td><?php echo $rowSupplier['keterangan']; ?></td>
                                     <td>
-                                        <a href="?hal=master/category/edit&id=<?php echo $rowCategory['category_id']; ?>">
+                                        <a href="?hal=master/supplier/edit&id=<?php echo $rowSupplier['id']; ?>">
                                             <button class="btn btn-primary" type="submit"><i class="fa fa-edit"></i>
                                                 Edit
                                             </button>
                                         </a>
-                                        <a href="?hal=master/category/list&hapus=<?php echo $rowCategory['category_id']; ?>">
+                                        <a href="?hal=master/supplier/list&hapus=<?php echo $rowSupplier['id']; ?>">
                                             <button class="btn btn-danger" type="submit" name="hapus"><i
                                                         class="fa fa-trash-o"></i> Delete
                                             </button>

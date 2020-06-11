@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Livina Store</title>
-    <link rel="icon" href="assets/images/logo.ico">
-    <link href="assets/css/css.css" rel="stylesheet">
-</head>
-<body>
 <?php
 error_reporting(0);
 ?>
 <div class="wrapper">
     <div class="row states-info">
-
         <a href="index.php?hal=transaksi_langsung" style="color: #fff;">
             <div class="col-md-3">
                 <div class="panel red-bg">
