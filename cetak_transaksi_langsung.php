@@ -1,17 +1,17 @@
 <?php
 include 'config.php';
 ?>
-    
+
 <!doctype html>
 <html>
     <head>
         <title>Laporan Data Barang</title>
         <link rel="shortcut icon" href="../img/laporan.png">
-        <link rel="stylesheet" type="text/css" href="css/laporan.css">   
+        <link rel="stylesheet" type="text/css" href="css/laporan.css">
         <link href="css/custom.css" rel="stylesheet" media="screen">
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link  href="css/bootstrap-responsive.min.css"  rel ="stylesheet"> 
-        <link  href="font-awesome/css/font-awesome.min.css"  rel ="stylesheet"> 
+        <link  href="css/bootstrap-responsive.min.css"  rel ="stylesheet">
+        <link  href="font-awesome/css/font-awesome.min.css"  rel ="stylesheet">
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <style>
@@ -28,30 +28,31 @@ include 'config.php';
         </style>
     </head>
     <body>
-            <h3 align="center">LAPORAN TRANSAKSI LANGSUNG</h3>       
+            <h3 align="center">LAPORAN TRANSAKSI LANGSUNG</h3>
         <div class="page">
-             <h4><b>TOKO HAJI DAN UMROH SALSA</b></h4>
-             TANAH ABANG, JAKARTA BARAT<br> DKI JAKARTA<br>
-             <br>
+
+          SUMBERSARI, JEMBER<br> JAWA TIMUR<br>
+          <BR>
+
              Tgl Cetak: <?php echo date('d-m-y') ?>
         <div class="kop">
             <!--<img src="../img/kop.png" id="kop"><br>-->
-           
-        
+
+
             </div>
         <table border="1px">
             <tr class="head">
                 <th width="15">NO. </th><th width="100">NO NOTA</th><th width="110">TANGGAL TRANSAKSI</th><th width="50">JUMLAH ITEM</th><th width="250">NAMA ITEM</th><th width="100">TOTAL TRANSAKSI</th>
             </tr><?php
 
-			
+
 
 
                $queryProduct = $connect->query("SELECT * FROM orders_detail JOIN barang ON orders_detail.product_id = barang.id GROUP BY tgl_order DESC
                              ");
 
                 $total = 0;
-                $nomor  = 0; 
+                $nomor  = 0;
                 while ($barang = mysqli_fetch_array($queryProduct)) {
                 	$jumlah =  $connect->query("SELECT jumlah FROM orders_detail WHERE tgl_order = '".$barang['tgl_order']."'
                              ");
@@ -78,11 +79,11 @@ include 'config.php';
                         </td>
 
                         <?php
-                        $totalSQL = $connect->query("SELECT orders_detail.id_orders, orders_detail.product_id, orders_detail.jumlah, orders_detail.tgl_order, barang.id, barang.nmbrg, barang.harga 
+                        $totalSQL = $connect->query("SELECT orders_detail.id_orders, orders_detail.product_id, orders_detail.jumlah, orders_detail.tgl_order, barang.id, barang.nmbrg, barang.harga
     						FROM orders_detail JOIN barang ON orders_detail.product_id = barang.id  WHERE tgl_order = '". $barang['tgl_order'] ."'
                              ");
                              ?>
-                          
+
                         <?php
 
                         $total= 0;
@@ -94,13 +95,13 @@ include 'config.php';
             			<td>
             			Rp. <?php echo number_format($total, 0, ',', '.'); ?>
             			</td>
-                    
+
                     </tr>
             <?php } ?>
-           
-                    
+
+
         </table>
-           
+
         </div>
     </body>
 </html>

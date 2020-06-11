@@ -13,7 +13,11 @@ if (isset($_GET['hapus'])) {
         <div class="col-sm-12">
             <section class="panel">
                 <header class="panel-heading">
+<<<<<<< HEAD
                     Data Kategori
+=======
+                    Data Kategori Jenis Tas
+>>>>>>> c37e4d4b6e01af56f35c3996caad5d8ba48094c7
                     <span class="tools pull-right">
                         <a href="javascript:;" class="fa fa-chevron-down"></a>
                         <a href="javascript:;" class="fa fa-times"></a>
@@ -26,7 +30,7 @@ if (isset($_GET['hapus'])) {
 
                                 <a href="?hal=master/category/add">
                                     <button data-toggle="modal" class="btn btn-primary">
-                                        Tambah Kategori <i class="fa fa-plus"></i>
+                                        Tambah Jenis Tas <i class="fa fa-plus"></i>
                                     </button>
                                 </a>
                             </div>
@@ -44,7 +48,7 @@ if (isset($_GET['hapus'])) {
                         <table class="table table-striped table-hover table-bordered" id="editable-sample">
                             <thead>
                             <tr>
-                                <th>Nama Kategori</th>
+                                <th>Nama Jenis Tas</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -60,11 +64,10 @@ if (isset($_GET['hapus'])) {
                                     <td><?php echo $rowCategory['category_name']; ?></td>
                                     <td><?php if ($rowCategory['category_status'] == 'Y') { ?>
                                             <button class="btn btn-success" type="submit"><i
-                                                        class="fa fa-check-square-o"></i> Active
+                                                        class="fa fa-check-square-o"></i> Tersedia
                                             </button>
                                         <?php } else { ?>
-                                            <button class="btn btn-danger" type="submit"><i class="fa fa-ban"></i> Not
-                                                Active
+                                            <button class="btn btn-danger" type="submit"><i class="fa fa-ban"></i> Tidak Tersedia
                                             </button>
 
                                         <?php } ?>

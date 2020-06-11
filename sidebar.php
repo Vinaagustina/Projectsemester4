@@ -21,7 +21,7 @@
                     <li <?php echo $data[1] == 'supplier' ? 'class=active' : ''; ?>><a href="?hal=master/supplier/list"><i
                                     class="fa fa-briefcase"></i> Supplier</a></li>
                     <li <?php echo $data[1] == 'category' ? 'class=active' : ''; ?>><a href="?hal=master/category/list"><i
-                                    class="fa fa-list"></i>Kategori</a></li>
+                                    class="fa fa-list"></i>Kategori Jenis Tas</a></li>
                     <li <?php echo $data[1] == 'satuan' ? 'class=active' : ''; ?>><a href="?hal=master/satuan/list"><i
                                     class="fa fa-tachometer"></i>Satuan</a></li>
                     <li <?php echo $data[1] == 'ekspedisi' ? 'class=active' : ''; ?>><a href="?hal=master/ekspedisi/list"> <i
