@@ -19,7 +19,7 @@ if ($queryUpdate) {
         <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-                    EDIT KATEGORI
+                    EDIT KATEGORI JENIS TAS
                 </header>
                 <div class="panel-body">
                     <div class=" form">
@@ -27,7 +27,7 @@ if ($queryUpdate) {
 
                             <div class="form-group ">
                                 <label for="cname" class="control-label col-lg-2" style="text-align: left;">Nama
-                                    Kategori</label>
+                                    jenis Tas</label>
                                 <div class="col-lg-6">
                                     <input class="form-control" id="cname" name="category_name" minlength="2"
                                            type="text" value="<?php echo $rowCategory['category_name'] ?>" required/>
@@ -39,8 +39,8 @@ if ($queryUpdate) {
                                        style="text-align: left;">Status</label>
                                 <div class="col-lg-6">
                                     <select class="form-control" name="category_status">
-                                        <option value="Y">Active</option>
-                                        <option value="N">Not Active</option>
+                                        <option value="Y">Tersedia</option>
+                                        <option value="N">Tidak Tersedia</option>
 
                                     </select>
                                 </div>

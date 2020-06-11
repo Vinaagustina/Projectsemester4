@@ -1,3 +1,3 @@
 <footer>
-    2019 &copy; by TEGUH DUMADI
+    2020 &copy; by LIVINA STORE
 </footer>
