@@ -30,7 +30,7 @@ if (!empty($_SESSION["username"]) && !empty($_SESSION['password'])) {
         -->
 
         <!-- data picker -->
-
+        <link href="assets/css/css.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-datepicker/css/datepicker-custom.css"/>
         <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-timepicker/css/timepicker.css"/>
         <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-colorpicker/css/colorpicker.css"/>

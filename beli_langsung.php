@@ -219,7 +219,7 @@ echo "<script> alert('Data Berhasil Diubah'); location.href='index.php?hal=maste
                                              aria-labelledby="myModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
-                                                    <div class="modal-header">
+                                                    <div class="modal-header" style="background:#4682B4">
                                                         <button type="button" class="close" data-dismiss="modal"
                                                                 aria-hidden="true">&times;
                                                         </button>

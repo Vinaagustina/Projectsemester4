@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['simpan'])) {
-    $queryInsert = $connect->query("INSERT INTO supplier SET nama='".$_POST['nama']."', alamat='".$_POST['alamat']."', telpon='".$_POST['telpon']."', keterangan='".$_POST['keterangan']."'" );
+    $queryInsert = $connect->query("INSERT INTO supplier SET nama='".$_POST['nama']."', alamat='".$_POST['alamat']."', telpon='".$_POST['telpon']."', email='".$_POST['email']."'" );
 
     if ($queryInsert) {
         echo "<script> alert('Data Berhasil Disimpan'); location.href='index.php?hal=master/supplier/list' </script>";
@@ -42,9 +42,9 @@ if (isset($_POST['simpan'])) {
                                 </div>
                             </div>
                             <div class="form-group ">
-                                <label for="keterangan" class="control-label col-lg-2" style="text-align: left;">Keterangan</label>
+                                <label for="email" class="control-label col-lg-2" style="text-align: left;">email</label>
                                 <div class="col-lg-6">
-                                    <input class=" form-control" id="keterangan" name="keterangan" minlength="2"
+                                    <input class=" form-control" id="email" name="email" minlength="2"
                                            type="text" required/>
                                 </div>
                             </div>

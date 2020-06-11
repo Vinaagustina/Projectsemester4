@@ -13,11 +13,7 @@ if (isset($_GET['hapus'])) {
         <div class="col-sm-12">
             <section class="panel">
                 <header class="panel-heading">
-<<<<<<< HEAD
                     Data Kategori
-=======
-                    Data Kategori Jenis Tas
->>>>>>> c37e4d4b6e01af56f35c3996caad5d8ba48094c7
                     <span class="tools pull-right">
                         <a href="javascript:;" class="fa fa-chevron-down"></a>
                         <a href="javascript:;" class="fa fa-times"></a>
@@ -48,7 +44,7 @@ if (isset($_GET['hapus'])) {
                         <table class="table table-striped table-hover table-bordered" id="editable-sample">
                             <thead>
                             <tr>
-                                <th>Nama Jenis Tas</th>
+                                <th>Jenis Tas</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
