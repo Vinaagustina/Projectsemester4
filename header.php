@@ -3,11 +3,11 @@
     <a class="toggle-btn"><i class="fa fa-bars"></i></a>
     <!--notification menu start -->
     <div class="menu-right">
-        <ul class="notification-menu">
+        <!-- <ul class="notification-menu">
             <li>
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                    <!-- <?php echo $_SESSION['username']; ?> -->
+
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
@@ -15,7 +15,7 @@
                 </ul>
             </li>
 
-        </ul>
+        </ul> -->
     </div>
     <!--notification menu end -->
 

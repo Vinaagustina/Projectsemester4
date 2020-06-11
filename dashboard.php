@@ -53,7 +53,7 @@ error_reporting(0);
                     </div>
                 </div>
             </div>
-        </a><!-- 
+        </a><!--
         <a href="?hal=coming" style="color: #fff;">
             <div class="col-md-3">
                 <div class="panel yellow-bg">

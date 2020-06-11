@@ -30,7 +30,7 @@ include 'config.php';
     <body>
             <h3 align="center">LAPORAN TRANSAKSI LANGSUNG</h3>
         <div class="page">
-
+          <h4><b>LIVINA STORE</b></h4>
           SUMBERSARI, JEMBER<br> JAWA TIMUR<br>
           <BR>
 
