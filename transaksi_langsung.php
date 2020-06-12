@@ -57,63 +57,7 @@ include "config.php";
                             </tr>
                             </thead>
                             <tbody>
-                  <?php
-                    //proses jika sudah klik tombol pencarian data
-                    if(isset($_POST['pencarian'])){
-                    //menangkap nilai form
-                    $tanggal_awal=$_POST['tanggal_awal'];
-                    $tanggal_akhir=$_POST['tanggal_akhir'];
-                    if(empty($tanggal_awal) || empty($tanggal_akhir)){
 
-                    //jika data tanggal kosong
-                    ?>
-                    <script language="JavaScript">
-                        alert('Tanggal Awal dan Tanggal Akhir Harap di Isi!');
-                        document.location='index.php?hal=transaksi_langsung';
-                    </script>
-                    <?php
-                    }else{
-                    ?><i><p>Informasi : </p> Hasil pencarian data berdasarkan periode Tanggal <p>
-                      <?php echo $_POST['tanggal_awal']?></p> s/d <p>
-                        <?php echo $_POST['tanggal_akhir']?></p></i>
-                    <?php
-                    $query=$connect->query("SELECT *FROM orders_detail WHERE tgl_order '$tanggal_awal' and '$tanggal_akhir'");
-                    }
-                ?>
-
-
-                <?php
-                //menampilkan pencarian data
-                while($row=mysqli_fetch_array($query)){
-                ?>
-                <tr>
-                      <!-- <?php echo $row['tgl_order']; ?> -->
-                    <td ><?php echo $row['id_orders']; ?></td>
-                    <td ><?php echo $row['product_id'];?></td>
-                    <td ><?php echo $row['jumlah'];?></td>
-                    <td ><?php echo $row['tgl_order'];?></td>
-                    <td ><?php echo $row['jam_order'];?></td>
-                </tr>
-                <?php
-                }
-                ?>
-                <tr>
-                    <td colspan="4" align="center">
-                    <?php
-                    //jika pencarian data tidak ditemukan
-                    if(mysql_num_rows($query)==0){
-                        echo "<font color=red><blink>Pencarian data tidak ditemukan!</blink></font>";
-                    }
-                    ?>
-                    </td>
-                </tr>
-            </table>
-            <?php
-            }
-            else{
-                unset($_POST['pencarian']);
-            }
-            ?>
                             <?php
 
                             $no = 1;
