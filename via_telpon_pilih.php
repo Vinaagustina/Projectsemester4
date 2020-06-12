@@ -1,4 +1,4 @@
-<?php
+<?php 
 include "config.php";
 
 session_start();
@@ -12,7 +12,7 @@ error_reporting(0);
 $id = $_GET['id'];
 $queryRowProduct = $connect->query("SELECT * FROM barang where id = '".$id."'");
 $rowProduct = mysqli_fetch_array($queryRowProduct);
-
+   
 
 $id_customer = $_GET['id_customer'];
 
@@ -28,7 +28,7 @@ $alamat = $ambildata['alamat_pembeli'];
         <!--body wrapper start-->
        <div class="wrapper">
     <div class="row">
-
+     
         <div class="col-sm-7">
             <section class="panel">
                 <header class="panel-heading">
@@ -65,7 +65,7 @@ $alamat = $ambildata['alamat_pembeli'];
                             <?php
                             $no = 1;
                             $queryProduct = $connect->query("SELECT barang.id, barang.kdbrg, barang.nmbrg, barang.harga, barang.stock, category.category_id, category.category_name, satuan.id_satuan, satuan.nmsatuan
-                             FROM barang
+                             FROM barang 
                              JOIN category ON barang.category_id = category.category_id
                              JOIN satuan ON barang.id_satuan = satuan.id_satuan
                              ORDER BY id DESC");
@@ -90,7 +90,7 @@ $alamat = $ambildata['alamat_pembeli'];
                                          </form>
                                     </td>
                                 </tr>
-
+                            
                             <?php } ?>
                             </tbody>
                         </table>
@@ -114,7 +114,7 @@ $id_customer = $_POST['id_customer'];
                     $sid = session_id();
                     $sql = $connect->query("SELECT stock FROM barang WHERE id='$id_barang'");
                     $s = mysqli_fetch_array($sql);
-                    $stok = $s['stock'];
+                    $stok = $s['stock']; 
                     //echo $stok; exit();
 
                     if ($stok == 0) {
@@ -127,7 +127,7 @@ $id_customer = $_POST['id_customer'];
                     $qty = $data_tmp['qty'];
                     $cek_status = $data_tmp['status'];
                     // var_dump($data_tmp);
-
+                    
 
                     if($cek==0){
                         $connect->query("INSERT INTO keranjang_telepon (id_keranjang, id_barang, id_session, id_customer, tgl_keranjang, jam_keranjang, qty, status) VALUES ('', '$id_barang', '$id_session', '$id_customer', NOW(), '$jam_sekarang',1, 0)");
@@ -142,9 +142,9 @@ $id_customer = $_POST['id_customer'];
                     else{
                         $connect->query("UPDATE keranjang_telepon SET qty=qty+1 where id_session='$id_session' and id_barang='$id_barang' AND id_customer='$id_customer' AND status = 0 ");
                     }
-
+                   
                     }
-
+        
     }
 
 ?>
@@ -176,8 +176,8 @@ $id_customer = $_POST['id_customer'];
                                     <?php
 
                                     $query = "SELECT keranjang_telepon.id_keranjang, keranjang_telepon.id_session, keranjang_telepon.tgl_keranjang, keranjang_telepon.jam_keranjang, keranjang_telepon.qty,
-                        barang.id, barang.kdbrg, barang.nmbrg, barang.harga, barang.stock
-                        FROM keranjang_telepon
+                        barang.id, barang.kdbrg, barang.nmbrg, barang.harga, barang.stock 
+                        FROM keranjang_telepon 
                         JOIN barang ON keranjang_telepon.id_barang = barang.id
                         WHERE id_session='$id_session' AND id_customer=$id_customer AND status = 0 ";
 
@@ -208,10 +208,10 @@ $id_customer = $_POST['id_customer'];
                                                 $id_customer=$_POST['id_customer'];
 
                                               $hapus= $connect->query("DELETE FROM keranjang_telepon where id_keranjang='$id_keranjang'");
-
+                                              
                                                $url = $_SERVER['REQUEST_URI'];
                                                     echo "<script>document.location='$url';</script>";
-
+                                              
                                             }
 ?>
                                             <td>
@@ -237,7 +237,7 @@ $id_customer = $_POST['id_customer'];
                                             </button>
 
                                             <a href="via_telpon_simpan.php?&id_customer=<?=$id_customer;?>">
-                                             <button class="btn btn-info" type="submit" name="simpan" id="simpan"><i class="fa fa-check"></i> Simpan
+                                             <button class="btn btn-info" type="submit" name="simpan" id="simpan"><i class="fa fa-check"></i> simpan
                                             </button></a>
                                         </td>
                                         <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
@@ -281,11 +281,11 @@ $id_customer = $_POST['id_customer'];
 
                                                                     <select name="pengiriman" id ="pengiriman" class="form-control " >
                                                                         <option value="">--Pilih Ekspedisi--</option>
-                                                                    <?php
+                                                                    <?php 
                                                                       $no = 0;
                                                                       $queryPengiriman = $connect->query("SELECT * FROM ekspedisi ORDER BY id_ekspedisi DESC");
                                                                       while ($rowPengiriman  = mysqli_fetch_array($queryPengiriman)) {
-
+                                                                        
                                                                     ?>
                                                                         <option value="<?php echo $rowPengiriman['id_ekspedisi']; ?>"><?php echo $rowPengiriman['nmekspedisi'] ?></option>
                                                                     <?php
@@ -294,7 +294,7 @@ $id_customer = $_POST['id_customer'];
                                                                     </select>
 
                                                                     <br><br>
-                                                                    <label> Input nama BANK</label>
+                                                                    <label> Inpu nama BANK</label>
                                                                     <input type="text" class="form-control input-lg"
                                                                            id="type2" name="bank">
                                                                 </div>

@@ -1,4 +1,4 @@
-<?php
+<?php 
 include "config.php";
 
 session_start();
@@ -13,15 +13,15 @@ $id = $_GET['id'];
 $queryRowProduct = $connect->query("SELECT * FROM barang where id = '".$id."'");
 $rowProduct = mysqli_fetch_array($queryRowProduct);
     /*
-    if (isset($_POST['ubah']) {
-
-      if (!empty($_FILES) && $_FILES['product_images']['size'] >0 && $_FILES['user_foto']['error'] == 0){
+    if (isset($_POST['ubah']) {  
+    
+      if (!empty($_FILES) && $_FILES['product_images']['size'] >0 && $_FILES['user_foto']['error'] == 0){  
             //$random = substr(number_format(time() * rand(),0,'',''),0,10);
             $images = $_FILES['product_images']['name'];
-            $move = move_uploaded_file($_FILES['product_images']['tmp_name'],'assets/images/product/'.$images);
+            $move = move_uploaded_file($_FILES['product_images']['tmp_name'],'assets/images/product/'.$images);  
 
-            if ($move) {
-              $queryUpdate  = mysql_query("UPDATE product SET
+            if ($move) {  
+              $queryUpdate  = mysql_query("UPDATE product SET 
                                     product_name      = '".$_POST['product_name']."',
                                     product_price     = '".str_replace(".", "", $_POST['product_price'])."',
                                     product_desc      = '".$_POST['product_desc']."',
@@ -32,29 +32,29 @@ $rowProduct = mysqli_fetch_array($queryRowProduct);
                                      ");
                 $file = "assets/images/product/".$rowProduct['product_images'];
                 unlink($file);
-
+                                             
             }
 
-      }else{
+      }else{  
         */
+       
 
-
-          if(isset($_POST['ubah'])){
+          if(isset($_POST['ubah'])){  
                 $queryUpdate=$connect->query("UPDATE barang SET
                                                     nmbrg = '".$_POST['product_name']."',
                                                     harga = '".str_replace(".", "", $_POST['product_price'])."',
                                                     stock = '".str_replace(".", "", $_POST['product_stock'])."',
                                                     category_id       = '".$_POST['product_category']."' ,
-                                                    nmsatuan = '".$_POST['satuan']."'
-                                                    WHERE id    = '".$id."' ");
+                                                    nmsatuan = '".$_POST['satuan']."'  
+                                                    WHERE id    = '".$id."' "); 
          if($queryUpdate === TRUE){
-
+         
 echo "<script> alert('Data Berhasil Diubah'); location.href='index.php?hal=master/barang/list' </script>";exit;
            }else{
             echo "ERROR UBAH DATA =" .$sql->connect_error;
            }
-            }
-
+            }                        
+       
      // if ($queryUpdate) {
        //  echo "<script> alert('Data Berhasil Diubah'); location.href='index.php?hal=master/barang/list' </script>";exit;
       //}
@@ -63,7 +63,7 @@ echo "<script> alert('Data Berhasil Diubah'); location.href='index.php?hal=maste
         <!--body wrapper start-->
        <div class="wrapper">
     <div class="row">
-
+     
         <div class="col-sm-7">
             <section class="panel">
                 <header class="panel-heading">
@@ -97,7 +97,7 @@ echo "<script> alert('Data Berhasil Diubah'); location.href='index.php?hal=maste
                             <?php
                             $no = 1;
                             $queryProduct = $connect->query("SELECT barang.id, barang.kdbrg, barang.nmbrg, barang.harga, barang.stock, category.category_id, category.category_name, satuan.id_satuan, satuan.nmsatuan
-                             FROM barang
+                             FROM barang 
                              JOIN category ON barang.category_id = category.category_id
                              JOIN satuan ON barang.id_satuan = satuan.id_satuan
                              ORDER BY id DESC");
@@ -174,8 +174,8 @@ echo "<script> alert('Data Berhasil Diubah'); location.href='index.php?hal=maste
                                     <?php
 
                                     $query = "SELECT keranjang.id_keranjang, keranjang.id_session, keranjang.tgl_keranjang, keranjang.jam_keranjang, keranjang.qty,
-                        barang.id, barang.kdbrg, barang.nmbrg, barang.harga, barang.stock
-                        FROM keranjang
+                        barang.id, barang.kdbrg, barang.nmbrg, barang.harga, barang.stock 
+                        FROM keranjang 
                         JOIN barang ON keranjang.id_barang = barang.id
                         WHERE id_session='$id_session'";
 
@@ -219,7 +219,7 @@ echo "<script> alert('Data Berhasil Diubah'); location.href='index.php?hal=maste
                                              aria-labelledby="myModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
-                                                    <div class="modal-header" style="background:#4682B4">
+                                                    <div class="modal-header">
                                                         <button type="button" class="close" data-dismiss="modal"
                                                                 aria-hidden="true">&times;
                                                         </button>
@@ -235,7 +235,7 @@ echo "<script> alert('Data Berhasil Diubah'); location.href='index.php?hal=maste
                                                             <!--<form method="POST" action="?hal=cetak">-->
                                                                 <form method="POST" action="cetak.php">
                                                                 <div class="form-group">
-                                                                    <label> Bayar</label>
+                                                                    <label> Chash</label>
 
                                                                 </div>
 

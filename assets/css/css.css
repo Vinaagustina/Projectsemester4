@@ -63,8 +63,8 @@ hr {
 
 .form-signin {
     max-width: 330px;
-    margin-top: 12%;
-    margin-left: 35%;
+    margin-top: 30%;
+    margin-left: 7%;
     background: #fff;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -5412,7 +5412,7 @@ ul.iconic-list li a:hover, ul.iconic-list li.active a {
     margin-bottom: 0;
     padding-bottom: 0;
 }
-
-.modal-header{
-    background-color: #4682B4 !important;
+.container {
+    width: 30%;
+    margin: 10px auto;
 }
