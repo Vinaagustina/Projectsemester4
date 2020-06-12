@@ -47,7 +47,7 @@ if (isset($_GET['hapus'])) {
                                 <th>Nama Supplier</th>
                                 <th>Alamat</th>
                                 <th>Telpon</th>
-                                <th>email</th>
+                                <th>Keterangan</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -62,7 +62,7 @@ if (isset($_GET['hapus'])) {
                                     <td><?php echo $rowSupplier['nama']; ?></td>
                                     <td><?php echo $rowSupplier['alamat']; ?></td>
                                     <td><?php echo $rowSupplier['telpon']; ?></td>
-                                    <td><?php echo $rowSupplier['email']; ?></td>
+                                    <td><?php echo $rowSupplier['keterangan']; ?></td>
                                     <td>
                                         <a href="?hal=master/supplier/edit&id=<?php echo $rowSupplier['id']; ?>">
                                             <button class="btn btn-primary" type="submit"><i class="fa fa-edit"></i>

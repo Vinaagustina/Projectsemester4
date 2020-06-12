@@ -1,6 +1,31 @@
 <?php
 error_reporting(0);
 ?>
+<?php
+$koneksi  = mysqli_connect("localhost", "root", "", "pos_free_v1");
+$nmbrg   = mysqli_query($koneksi, "SELECT nmbrg FROM barang order by total_terjual desc");
+$total_terjual   = mysqli_query($koneksi, "SELECT total_terjual FROM barang order by total_terjual desc");
+
+// $stok   = mysqli_query($koneksi, "SELECT (stock-total_terjual) FROM barang order by id asc");
+// $namabrg   = mysqli_query($koneksi, "SELECT nmbrg FROM barang order by id asc");
+
+// $tgl_order  = mysqli_query($koneksi, "SELECT tgl_order FROM order_detail order by tgl_order asc");
+// $jumlah     = mysqli_query($koneksi, "SELECT ((oder_detail.jumlah)*(barang.harga)) FROM orders_detail JOIN barang ON orders_detail.product_id = barang.id order by orders_detail.tgl_order asc");
+?>
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Grafik Penjualan</title>
+    <script src="chartjs/js/Chart.js"></script>
+    <style type="text/css">
+        .container {
+            width: 30%;
+            margin: 10px auto;
+        }
+    </style>
+  </head>
+  <body> -->
 <div class="wrapper">
     <div class="row states-info">
         <a href="index.php?hal=transaksi_langsung" style="color: #fff;">
@@ -53,8 +78,8 @@ error_reporting(0);
                     </div>
                 </div>
             </div>
-        </a><!-- 
-        <a href="?hal=coming" style="color: #fff;">
+        </a>
+        <!-- <a href="?hal=coming" style="color: #fff;">
             <div class="col-md-3">
                 <div class="panel yellow-bg">
                     <div class="panel-body">
@@ -70,24 +95,22 @@ error_reporting(0);
                     </div>
                 </div>
             </div>
-    </div>
-    </a> -->
+        </div>
+        </a> -->
 
     <div class="row">
-
-        <div class="col-sm-6">
+        <!-- <div class="col-sm-6">
             <section class="panel">
                 <header class="panel-heading">
                     TRANSAKSI DAY : <span style="color:#FF6600;"><?php echo date('d F Y'); ?></span>
                     <span class="tools pull-right">
-                            <a href="javascript:;" class="fa fa-chevron-down"></a>
-                            <a href="javascript:;" class="fa fa-times"></a>
-                         </span>
+                        <a href="javascript:;" class="fa fa-chevron-down"></a>
+                        <a href="javascript:;" class="fa fa-times"></a>
+                    </span>
                 </header>
                 <div class="panel-body">
                     <div id="graph-area1"></div>
-
-                    <!-- <script>
+                    <script>
                         var transDayStat = [{period: '1.00', Rp: 5155, Transaksi: '1'}, {
                             period: '2.00',
                             Rp: 0,
@@ -133,23 +156,18 @@ error_reporting(0);
                             Rp: 0,
                             Transaksi: '0'
                         }, {period: '23.00', Rp: 0, Transaksi: '0'}, {period: '24.00', Rp: 0, Transaksi: '0'}];
-                    </script> -->
-
-                    <script>
-
                     </script>
-                </div>
-            </section>
-        </div>
-
-        <div class="col-sm-6">
+            </div>
+        </section>
+        </div> -->
+        <!-- <div class="col-sm-6">
             <section class="panel">
                 <header class="panel-heading">
                     TRANSAKSI MONTH : <span style="color:#FF6600;"><?php echo date('F Y'); ?></span>
                     <span class="tools pull-right">
                             <a href="javascript:;" class="fa fa-chevron-down"></a>
                             <a href="javascript:;" class="fa fa-times"></a>
-                         </span>
+                    </span>
                 </header>
                 <div class="panel-body">
                     <div id="graph-area2"></div>
@@ -228,11 +246,164 @@ error_reporting(0);
                     </script>
                 </div>
             </section>
+        </div> -->
+    <!-- <div class="col-12">
+        <h3 style="color:Black">Grafik</h3>
+    </div> -->
+        <div class="col-sm-6">
+            <div class="panel">
+                <header class="panel-heading">Grafik Produk Terlaris</header>
+                <div class="card-body">
+                    <div class="chart">
+                        <canvas id="terlaris" height="150px"></canvas>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
+        <!-- <div class="col-sm-6">
+            <div class="panel">
+                <header class="panel-heading">Stok Barang</header>
+                <div class="card-body">
+                    <div class="chart">
+                        <canvas id="stok" height="150px"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="col-sm-6">
+            <div class="panel">
+                <header class="panel-heading">Penjualan Bulan Ini</header>
+                <div class="card-body">
+                    <div class="chart">
+                        <canvas id="penjualan" style="min-height: 250px; height: 450px; max-height: 450px; max-width: 100%"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div> -->
     </div>
-
 </div>
-</body>
-</html>
+<!-- </body>
+</html> -->
+<script src="chartjs/js/Chart.js"></script>
+<script  type="text/javascript">
+// grafik produk terlaris
+    var ctx = document.getElementById("terlaris").getContext("2d");
+    var data = {
+            labels: [<?php while ($p = mysqli_fetch_array($nmbrg)) { echo '"' . $p['nmbrg'] . '",';}?>],
+            datasets: [
+                {
+              label: "Total Penjualan",
+              data: [<?php while ($p = mysqli_fetch_array($total_terjual)) { echo '"' . $p['total_terjual'] . '",';}?>],
+              backgroundColor: [
+                '#20B2AA', //light sea green
+                '#FFA07A', //ligt salmon
+                '#F0E68C', //khaki
+                '#CD5C5C', //indian red
+                '#FFB6C1', //light pink
+                // '#90EE90', //light green
+                // '#B0C4DE' //light steel blue
+              ]
+            }
+            ]
+            };
+
+            var myBarChart = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: {
+            legend: {
+              display: false
+            },
+            // barValueSpacing: 20,
+            // scales: {
+            //   yAxes: [{
+            //       ticks: {
+            //           min: 0,
+            //       }
+            //   }],
+            //   xAxes: [{
+            //               gridLines: {
+            //                   color: "rgb(0, 0, 0)",
+            //               }
+            //           }]
+            //   }
+          }
+        });
+    
+//stok barang
+    var ctx = document.getElementById("stok").getContext("2d");
+    var data = {
+            labels: [<?php while ($s = mysqli_fetch_array($namabrg)) { echo '"' . $s['namabrg'] . '",';}?>],
+            datasets: [
+                {
+              label: "Stok Barang",
+              data: [<?php while ($s = mysqli_fetch_array($stok)) { echo '"' . $s['stok'] . '",';}?>],
+              backgroundColor: [
+                '#20B2AA', //light sea green
+                '#FFA07A', //ligt salmon
+                '#F0E68C', //khaki
+                '#CD5C5C', //indian red
+                '#FFB6C1', //light pink
+                // '#90EE90', //light green
+                // '#B0C4DE' //light steel blue
+              ]
+            }
+            ]
+            };
+
+    var myBarChart = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: {
+            legend: {
+              display: false
+            },
+          }
+        });
+//grafik penjualan
+//     var ctx = document.getElementById("penjualan").getContext("2d");
+//     var data = {
+//             labels: [<?php while ($p = mysqli_fetch_array($tgl_order)) { echo '"' . $p['tgl_order'] . '",';}?>],
+//             datasets: [
+//                 {
+//               label: "Total Transaksi",
+//               data: [
+//                 <?php while ($p = mysqli_fetch_array($jumlah)) {echo '"' . $p['jumlah'] . '",';}?>},
+//                 //         $sub_total = $data['harga'] * $data['jumlah'];
+//                 //         $total += $sub_total;})
+//                 // {echo '"'.$p['total'].'",';}?>],
+//               backgroundColor: [
+//                 '#FFB6C1', //light pink
+//                 '#90EE90', //light green
+//                 '#FFA07A', //ligt salmon
+//                 '#B0C4DE', //light steel blue
+//                 '#F0E68C', //khaki
+//                 '#CD5C5C' //indian red
+//               ]
+//             }
+//             ]
+//             };
+
+//   var myBarChart = new Chart(ctx, {
+//             type: 'bar',
+//             data: data,
+//             options: {
+//             legend: {
+//               display: false
+//             },
+//             barValueSpacing: 20,
+//             scales: {
+//               yAxes: [{
+//                   ticks: {
+//                       min: 0,
+//                   }
+//               }],
+//               xAxes: [{
+//                           gridLines: {
+//                               color: "rgb(0, 0, 0)",
+//                           }
+//                       }]
+//               }
+//           }
+//         });
+</script>

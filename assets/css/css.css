@@ -5412,7 +5412,7 @@ ul.iconic-list li a:hover, ul.iconic-list li.active a {
     margin-bottom: 0;
     padding-bottom: 0;
 }
-
-.modal-header{
-    background-color: #4682B4 !important;
+.container {
+    width: 30%;
+    margin: 10px auto;
 }

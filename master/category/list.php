@@ -26,7 +26,7 @@ if (isset($_GET['hapus'])) {
 
                                 <a href="?hal=master/category/add">
                                     <button data-toggle="modal" class="btn btn-primary">
-                                        Tambah Jenis Tas <i class="fa fa-plus"></i>
+                                        Tambah Kategori <i class="fa fa-plus"></i>
                                     </button>
                                 </a>
                             </div>
@@ -44,7 +44,7 @@ if (isset($_GET['hapus'])) {
                         <table class="table table-striped table-hover table-bordered" id="editable-sample">
                             <thead>
                             <tr>
-                                <th>Jenis Tas</th>
+                                <th>Nama Kategori</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -60,10 +60,11 @@ if (isset($_GET['hapus'])) {
                                     <td><?php echo $rowCategory['category_name']; ?></td>
                                     <td><?php if ($rowCategory['category_status'] == 'Y') { ?>
                                             <button class="btn btn-success" type="submit"><i
-                                                        class="fa fa-check-square-o"></i> Tersedia
+                                                        class="fa fa-check-square-o"></i> Active
                                             </button>
                                         <?php } else { ?>
-                                            <button class="btn btn-danger" type="submit"><i class="fa fa-ban"></i> Tidak Tersedia
+                                            <button class="btn btn-danger" type="submit"><i class="fa fa-ban"></i> Not
+                                                Active
                                             </button>
 
                                         <?php } ?>
