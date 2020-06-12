@@ -40,8 +40,8 @@ $jam_skrg = date("H:i:s");
 
 
 // simpan data pemesanan
-$connect->query("INSERT INTO 
-                order(idnama_petugas, tgl_order, jam_order) 
+$connect->query("INSERT INTO
+                order(idnama_petugas, tgl_order, jam_order)
                  VALUES ('" . $_SESSION['username'] . "',NOW(),'$jam_skrg')");
 //exit();
 // mendapatkan nomor orders
@@ -55,16 +55,16 @@ $query = "SELECT max(id_orders) as maxKode FROM orders_detail";
 $hasil = $connect->query($query);
 $data = mysqli_fetch_array($hasil);
 $kodePesan = $data['maxKode'];
- 
+
 // mengambil angka atau bilangan dalam kode anggota terbesar,
 // dengan cara mengambil substring mulai dari karakter ke-1 diambil 6 karakter
 // misal 'BRG001', akan diambil '001'
 // setelah substring bilangan diambil lantas dicasting menjadi integer
 $noUrut = (int) substr($kodePesan, 9, 3);
- 
+
 // bilangan yang diambil ini ditambah 1 untuk menentukan nomor urut berikutnya
 $noUrut++;
- 
+
 // membentuk kode anggota baru
 // perintah sprintf("%03s", $noUrut); digunakan untuk memformat string sebanyak 3 karakter
 // misal sprintf("%03s", 12); maka akan dihasilkan '012'
@@ -81,7 +81,7 @@ $id_orders = $kodePesanan;
 
 // simpan data detail pemesanan
 for ($i = 0; $i < $jml; $i++) {
-    $connect->query("INSERT INTO orders_detail(id_orders, product_id, jumlah) 
+    $connect->query("INSERT INTO orders_detail(id_orders, product_id, jumlah)
                    VALUES('$id_orders',{$isikeranjang[$i]['id_barang']}, {$isikeranjang[$i]['qty']})");
 
     $connect->query("UPDATE barang SET stock=stock - {$isikeranjang[$i]['qty']} WHERE id={$isikeranjang[$i]['id_barang']}");
@@ -107,7 +107,7 @@ $daftarproduk = $connect->query("SELECT orders_detail.id_orders, orders_detail.p
         <div class="col-md-7">
 
             <div class="panel">
-                <div class="panel-body"> 
+                <div class="panel-body">
                     <h1>Cash Rp. <?php echo number_format(str_replace(".", "", $_POST['cash']), 0, ',', '.'); ?></h1>
                 </div>
             </div>
@@ -121,7 +121,7 @@ $daftarproduk = $connect->query("SELECT orders_detail.id_orders, orders_detail.p
                                 <table class="table">
                                     <thead>
                                     <tr>
-                                        <th>Nama</th>
+                                        <th>Nama Tas</th>
                                         <th>Harga</th>
                                         <th>Qty</th>
                                         <th>Sub Total</th>
@@ -184,9 +184,9 @@ $daftarproduk = $connect->query("SELECT orders_detail.id_orders, orders_detail.p
         <div class="col-md-5">
             <div id="struk">
                 <!-- struk -->
-                <div style="width:327px; 
-                padding:0 10px 20px 10px; 
-                margin:0 auto; 
+                <div style="width:327px;
+                padding:0 10px 20px 10px;
+                margin:0 auto;
                 background:#ffffff; color:#4d4d4d;
                  font:13px /1.5 Tahoma; border:4px double #dddddd;">
 
@@ -222,8 +222,8 @@ $daftarproduk = $connect->query("SELECT orders_detail.id_orders, orders_detail.p
                         <?php
 
                         //exit();
-                        $CetakNota = $connect->query("SELECT * FROM orders_detail,barang 
-                                     WHERE orders_detail.product_id=barang.id 
+                        $CetakNota = $connect->query("SELECT * FROM orders_detail,barang
+                                     WHERE orders_detail.product_id=barang.id
                                      AND id_orders='$id_orders'");
                         $totalcetak = 0;
                         $itemcetak = 0;
@@ -297,4 +297,3 @@ $daftarproduk = $connect->query("SELECT orders_detail.id_orders, orders_detail.p
         </div>
     </div>
 </div>
-
