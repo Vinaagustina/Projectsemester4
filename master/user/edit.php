@@ -163,7 +163,7 @@ if (isset($_POST['updatePassword'])) {
 
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" id="bayar">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title"><i class="fa fa-warning"></i> Ganti Password</h4>
             </div>
