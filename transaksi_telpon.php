@@ -20,7 +20,7 @@ include "config.php";
                       <div>
                       <form>
                           <table>
-                                <a href="?hal=rekap"><button class="btn btn-primary" id="rekap" type="button">Lihat Rekap</button></a>
+                                <a href="?hal=rekap_transaksitelp"><button class="btn btn-primary" id="rekap" type="button">Lihat Rekap</button></a>
                                   <!-- <td><button class="btn btn-danger" type="reset" value="Reset"><a href="transaksi_langsung.php">Reset</a></button></td> -->
                           </table>
                       </form>
