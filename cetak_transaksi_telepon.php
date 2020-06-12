@@ -1,17 +1,17 @@
 <?php
 include 'config.php';
 ?>
-    
+
 <!doctype html>
 <html>
     <head>
         <title>Laporan Data Barang</title>
         <link rel="shortcut icon" href="../img/laporan.png">
-        <link rel="stylesheet" type="text/css" href="css/laporan.css">   
+        <link rel="stylesheet" type="text/css" href="css/laporan.css">
         <link href="css/custom.css" rel="stylesheet" media="screen">
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link  href="css/bootstrap-responsive.min.css"  rel ="stylesheet"> 
-        <link  href="font-awesome/css/font-awesome.min.css"  rel ="stylesheet"> 
+        <link  href="css/bootstrap-responsive.min.css"  rel ="stylesheet">
+        <link  href="font-awesome/css/font-awesome.min.css"  rel ="stylesheet">
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <style>
@@ -28,33 +28,33 @@ include 'config.php';
         </style>
     </head>
     <body>
-            <h3 align="center">LAPORAN TRANSAKSI VIA TELPON (LUNAS)</h3>       
+            <h3 align="center">LAPORAN TRANSAKSI VIA TELPON (LUNAS)</h3>
         <div class="page">
-             <h4><b>TOKO HAJI DAN UMROH SALSA</b></h4>
-             TANAH ABANG, JAKARTA BARAT<br> DKI JAKARTA<br>
-             <br>
+          <h4><b>LIVINA STORE</b></h4>
+          SUMBERSARI, JEMBER<br> JAWA TIMUR<br>
+          <BR>
              Tgl Cetak: <?php echo date('d-m-y') ?>
         <div class="kop">
             <!--<img src="../img/kop.png" id="kop"><br>-->
-           
-        
+
+
             </div>
         <table border="1px">
             <tr class="head">
                 <th width="15">NO. </th><th width="85">NO NOTA</th><th width="100">WAKTU TRANSAKSI</th><th width="100">NAMA PEMBELI</th><th>NO TELPON</th><th  width="80">JUMLAH ITEM</th><th width="100">NAMA ITEM</th><th>TOTAL TRANSAKSI</th><th width="50">NAMA BANK</th><th width="80">STATUS</th>
             </tr><?php
 
-			
+
 
 
                $queryProduct = $connect->query("SELECT * FROM order_telepon JOIN barang ON order_telepon.product_id = barang.id JOIN customer ON order_telepon.id_customer = customer.id_customer WHERE status = 1 GROUP BY tgl_order DESC
                              ");
 
                 $total = 0;
-                $nomor  = 0; 
+                $nomor  = 0;
                 $barang = mysqli_fetch_array($queryProduct);
-               
-                
+
+
                 while ($barang = mysqli_fetch_array($queryProduct)) {
                     $jumlah =  $connect->query("SELECT jumlah FROM order_telepon WHERE tgl_order = '".$barang['tgl_order']."'
                              ");
@@ -80,11 +80,11 @@ include 'config.php';
                         <?php } ?>
                         </td>
                          <?php
-                        $totalSQL = $connect->query("SELECT order_telepon.id_orders, order_telepon.product_id, order_telepon.jumlah, order_telepon.tgl_order, barang.id, barang.nmbrg, barang.harga 
+                        $totalSQL = $connect->query("SELECT order_telepon.id_orders, order_telepon.product_id, order_telepon.jumlah, order_telepon.tgl_order, barang.id, barang.nmbrg, barang.harga
                             FROM order_telepon JOIN barang ON order_telepon.product_id = barang.id  WHERE tgl_order = '". $barang['tgl_order'] ."'
                              ");
                              ?>
-                          
+
                         <?php
 
                         $total= 0;
@@ -102,11 +102,11 @@ include 'config.php';
                     </tr>
 <?php
                 }
-                
+
                ?>
-                    
+
         </table>
-           
+
         </div>
     </body>
 </html>

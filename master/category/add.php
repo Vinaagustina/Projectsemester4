@@ -14,7 +14,7 @@ if (isset($_POST['simpan'])) {
         <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-                    TAMBAH KATEGORI
+                    TAMBAH KATEGORI JENIS TAS
                 </header>
                 <div class="panel-body">
                     <div class=" form">
@@ -22,7 +22,7 @@ if (isset($_POST['simpan'])) {
                               enctype="multipart/form-data" action="">
                             <div class="form-group ">
                                 <label for="cname" class="control-label col-lg-2" style="text-align: left;">Nama
-                                    Kategori</label>
+                                    Jenis Tas</label>
                                 <div class="col-lg-6">
                                     <input class=" form-control" id="cname" name="category_name" minlength="2"
                                            type="text" required/>
