@@ -24,21 +24,10 @@ include "config.php";
                             </div>
                         </div> -->
                         <div>
-                        <form action="" method="post" name="postform">
-                            <p align="center"><p>Pencarian Data Berdasarkan Periode Tanggal</p><br/>
+                        <form>
                             <table>
-                                <tr>
-                                    <td><p>Dari Tanggal</p></td>
-                                    <td colspan="2" width="190">: <input type="date" name="tanggal_awal" size="16" />
-                                    <a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.postform.tanggal_awal);return false;" ><img src="calender/calbtn.gif" alt="" name="popcal" width="34" height="29" border="0" align="absmiddle" id="popcal" /></a>
-                                    </td>
-                                    <td width="125"><p>Sampai Tanggal</p></td>
-                                    <td colspan="2" width="190">: <input type="date" name="tanggal_akhir" size="16" />
-                                    <a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.postform.tanggal_akhir);return false;" ><img src="calender/calbtn.gif" alt="" name="popcal" width="34" height="29" border="0" align="absmiddle" id="popcal" /></a>
-                                    </td>
-                                    <td><button class="btn btn-primary" type="submit" value="Lihat" name="pencarian">Lihat</button></td>
+                                  <a href="?hal=rekap"><button class="btn btn-primary" id="rekap" type="button">Lihat Rekap</button></a>
                                     <!-- <td><button class="btn btn-danger" type="reset" value="Reset"><a href="transaksi_langsung.php">Reset</a></button></td> -->
-                                </tr>
                             </table>
                         </form>
                         </div

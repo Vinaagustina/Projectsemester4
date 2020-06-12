@@ -74,15 +74,15 @@ include "config.php";
                                 ?><i><p>Informasi : </p> Hasil pencarian data berdasarkan periode Tanggal <p>
                                   <?php echo $_POST['tanggal_awal']?></p> s/d <p>
                                   <?php echo $_POST['tanggal_akhir']?></p></i>
-                                <!-- <?php
-                                $query=$connect->query("SELECT orders_detail.id_orders, orders_detail.product_id, orders_detail.jumlah, orders_detail.tgl_order,barang.id, barang.nmbrg FROM orders_detail JOIN barang ON orders_detail.product_id = barang.id  GROUP BY tgl_order DESC");
+                                <?php
+
                                 }
-                            ?> -->
+                            ?>
 
 
                             <?php
                             $no = 1;
-                            $query=$connect->query("SELECT orders_detail.id_orders, orders_detail.product_id, orders_detail.jumlah, orders_detail.tgl_order,barang.id, barang.nmbrg FROM orders_detail JOIN barang ON orders_detail.product_id = barang.id  WHERE DATE orders_detail.tgl_order between '$tanggal_awal' and '$tanggal_akhir' GROUP BY orders_detail.tgl_order ASC");
+                            $query=$connect->query("SELECT orders_detail.id_orders, orders_detail.product_id, orders_detail.jumlah, orders_detail.tgl_order,barang.id, barang.nmbrg FROM orders_detail JOIN barang ON orders_detail.product_id = barang.id  WHERE DATE (orders_detail.tgl_order) between '$tanggal_awal' and '$tanggal_akhir' GROUP BY orders_detail.tgl_order ASC");
 
                             if ($query === FALSE) {
                                 die(mysqli_error($connect));
