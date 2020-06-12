@@ -62,9 +62,9 @@ hr {
 }
 
 .form-signin {
-    max-width: 330px;
-    margin-top: 30%;
-    margin-left: 7%;
+    max-width: 300px;
+    margin-left: 21%;
+    margin-top: 25%;
     background: #fff;
     border-radius: 5px;
     -webkit-border-radius: 5px;
