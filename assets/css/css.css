@@ -5412,7 +5412,12 @@ ul.iconic-list li a:hover, ul.iconic-list li.active a {
     margin-bottom: 0;
     padding-bottom: 0;
 }
-.container {
-    width: 30%;
-    margin: 10px auto;
+#tblRekap{
+    width: 10%;
+    float: left;
+    margin-top: 20px;
+}
+.container{
+    width: 40%;
+    margin: 15px auto;
 }
