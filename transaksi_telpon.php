@@ -1,11 +1,11 @@
-<?php 
+<?php
 include "config.php";
 
  ?>
         <!--body wrapper start-->
        <div class="wrapper">
     <div class="row">
-     
+
         <div class="col-sm-12">
             <section class="panel">
                 <header class="panel-heading">
@@ -17,6 +17,14 @@ include "config.php";
                 </header>
                 <div class="panel-body">
                     <div class="adv-table editable-table ">
+                      <div>
+                      <form>
+                          <table>
+                                <a href="?hal=rekap"><button class="btn btn-primary" id="rekap" type="button">Lihat Rekap</button></a>
+                                  <!-- <td><button class="btn btn-danger" type="reset" value="Reset"><a href="transaksi_langsung.php">Reset</a></button></td> -->
+                          </table>
+                      </form>
+                      </div
                         <div class="clearfix">
 
                             <div class="btn-group pull-right">
@@ -51,17 +59,17 @@ include "config.php";
                                     <td><?php echo $rowProduct['id_orders'] ?></td>
                                     <td><?php echo $rowProduct['tgl_order'] ?></td>
                                     <td><?php echo $totjumlah; ?> Item</td>
-                                    
+
                                     <td>
                                         <a href="index.php?hal=detail_transaksi_telpon&id_orders=<?php echo $rowProduct['id_orders']; ?>">
                                             <button class="btn btn-primary" type="submit"><i class="fa fa-book" aria-hidden="true"></i>
                                                 Lihat Detail
                                             </button>
                                         </a>
-                                       
+
                                     </td>
                                 </tr>
-                               
+
                             <?php } ?>
                             </tbody>
                         </table>
@@ -71,4 +79,3 @@ include "config.php";
         </div>
     </div>
 </div>
-       

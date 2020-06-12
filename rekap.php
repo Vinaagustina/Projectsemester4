@@ -18,11 +18,11 @@ include "config.php";
 
                 <div class="panel-body">
                     <div class="adv-table editable-table ">
-                        <!-- <div class="clearfix">
+                        <div class="clearfix">
 
                             <div class="btn-group pull-right">
                             </div>
-                        </div> -->
+                        </div>
                         <div>
                         <form action="" method="post" name="postform">
                             <p align="center"><p>Pencarian Data Berdasarkan Periode Tanggal</p><br/>
@@ -39,10 +39,10 @@ include "config.php";
                                 </tr>
                             </table>
                         </form>
-                        </div
 
 
-                        <div class="space15"></div>
+
+                        <div class="space15">
                         <table class="table table-striped table-hover table-bordered" id="editable-sample">
                             <thead>
                             <tr>
@@ -121,6 +121,7 @@ include "config.php";
                             </tbody>
                     </div>
                   </div>
+                </div>
             </section>
           </div>
     </div>
