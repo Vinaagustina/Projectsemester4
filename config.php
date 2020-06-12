@@ -10,8 +10,8 @@ $dbuser = 'root';
 $dbpass = '';
 $dbname = 'pos_free_v1';
 
-$connect = new mysqli ($dbhost, $dbuser, $dbpass, $dbname);
+$connect =mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if($connect->connect_error){
 	die ('Koneksi Error' . $connect->connect_error);
 }
-?>	
+?>

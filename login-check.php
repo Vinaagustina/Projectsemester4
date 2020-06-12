@@ -4,12 +4,12 @@ $var_username = $_POST['frm_username'];
 $var_password = $_POST['frm_password'];
 $sql_check="select * from user where user_username='".$var_username."'";
 //$result = mysql_query($sql_check);
-$result = $connect->query($sql_check);
+$result = mysqli_query($connect,$sql_check);
 $getUser = mysqli_num_rows($result);
 $getDataUser = mysqli_fetch_array($result);
-if ($getUser === 1) 
+if ($getUser === 1)
 {
-	
+
 	if (password_verify($var_password,$getDataUser['user_password']))
 	{
 		session_start();
@@ -21,11 +21,10 @@ if ($getUser === 1)
 	else
 	{
 		header('location: login.php?action=failed');
-	}	
-	
+	}
+
 }
 else
 {
 	header('location: login.php?action=failed');
 }
-
