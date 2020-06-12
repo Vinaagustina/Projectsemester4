@@ -74,10 +74,10 @@ include "config.php";
                                 ?><i><p>Informasi : </p> Hasil pencarian data berdasarkan periode Tanggal <p>
                                   <?php echo $_POST['tanggal_awal']?></p> s/d <p>
                                   <?php echo $_POST['tanggal_akhir']?></p></i>
-                                <!-- <?php
-                                $query=$connect->query("SELECT orders_detail.id_orders, orders_detail.product_id, orders_detail.jumlah, orders_detail.tgl_order,barang.id, barang.nmbrg FROM orders_detail JOIN barang ON orders_detail.product_id = barang.id  GROUP BY tgl_order DESC");
+                                <?php
+
                                 }
-                            ?> -->
+                            ?>
 
 
                             <?php

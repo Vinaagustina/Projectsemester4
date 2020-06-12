@@ -17,6 +17,7 @@ include "config.php";
                 </header>
                 <div class="panel-body">
                     <div class="adv-table editable-table ">
+<<<<<<< HEAD
                     <form>
                         <table>
                             <a href="?hal=rekap"><button class="btn btn-block btn-primary" id="tblRekap"type="button">Lihat Rekap</button></a>
@@ -92,6 +93,37 @@ include "config.php";
                 unset($_POST['pencarian']);
             }
             ?>
+=======
+                        <!-- <div class="clearfix">
+
+                            <div class="btn-group pull-right">
+                            </div>
+                        </div> -->
+                        <div>
+                        <form>
+                            <table>
+                                  <a href="?hal=rekap"><button class="btn btn-primary" id="rekap" type="button">Lihat Rekap</button></a>
+                                    <!-- <td><button class="btn btn-danger" type="reset" value="Reset"><a href="transaksi_langsung.php">Reset</a></button></td> -->
+                            </table>
+                        </form>
+                        </div
+
+
+                        <div class="space15"></div>
+                        <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                            <thead>
+                            <tr>
+                                <th width="5%">No</th>
+                                <th width="15%">No Nota</th>
+                                <th width="20%">Tanggal Pesanan</th>
+                                <th width="20%">Jumlah Item</th>
+                                <!--<th>Deskripsi</th>-->
+                                <th width="10%">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+>>>>>>> 9ccd796750b696388ef85f0c33d94b837e6039f2
                             <?php
 
                             $no = 1;
