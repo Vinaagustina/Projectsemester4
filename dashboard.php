@@ -78,13 +78,8 @@ $total_terjual   = mysqli_query($koneksi, "SELECT total_terjual FROM barang orde
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
         </a>
         <!-- <a href="?hal=coming" style="color: #fff;">
-=======
-        </a><!--
-        <a href="?hal=coming" style="color: #fff;">
->>>>>>> 04f442589363d056e30d9543d1709312a7b11e21
             <div class="col-md-3">
                 <div class="panel yellow-bg">
                     <div class="panel-body">
@@ -336,79 +331,76 @@ $total_terjual   = mysqli_query($koneksi, "SELECT total_terjual FROM barang orde
         });
     
 //stok barang
-    var ctx = document.getElementById("stok").getContext("2d");
+    // var ctx = document.getElementById("stok").getContext("2d");
+    // var data = {
+    //         labels: [<?php while ($s = mysqli_fetch_array($namabrg)) { echo '"' . $s['namabrg'] . '",';}?>],
+    //         datasets: [
+    //             {
+    //           label: "Stok Barang",
+    //           data: [<?php while ($s = mysqli_fetch_array($stok)) { echo '"' . $s['stok'] . '",';}?>],
+    //           backgroundColor: [
+    //             '#20B2AA', //light sea green
+    //             '#FFA07A', //ligt salmon
+    //             '#F0E68C', //khaki
+    //             '#CD5C5C', //indian red
+    //             '#FFB6C1', //light pink
+    //             // '#90EE90', //light green
+    //             // '#B0C4DE' //light steel blue
+    //           ]
+    //         }
+    //         ]
+    //         };
+
+    // var myBarChart = new Chart(ctx, {
+    //         type: 'pie',
+    //         data: data,
+    //         options: {
+    //         legend: {
+    //           display: false
+    //         },
+    //       }
+    //     });
+//grafik penjualan
+    var ctx = document.getElementById("penjualan").getContext("2d");
     var data = {
-            labels: [<?php while ($s = mysqli_fetch_array($namabrg)) { echo '"' . $s['namabrg'] . '",';}?>],
+            labels: [<?php while ($p = mysqli_fetch_array($tgl_order)) { echo '"' . $p['tgl_order'] . '",';}?>],
             datasets: [
                 {
-              label: "Stok Barang",
-              data: [<?php while ($s = mysqli_fetch_array($stok)) { echo '"' . $s['stok'] . '",';}?>],
+              label: "Total Transaksi",
+              data: [
+                
               backgroundColor: [
-                '#20B2AA', //light sea green
-                '#FFA07A', //ligt salmon
-                '#F0E68C', //khaki
-                '#CD5C5C', //indian red
                 '#FFB6C1', //light pink
-                // '#90EE90', //light green
-                // '#B0C4DE' //light steel blue
+                '#90EE90', //light green
+                '#FFA07A', //ligt salmon
+                '#B0C4DE', //light steel blue
+                '#F0E68C', //khaki
+                '#CD5C5C' //indian red
               ]
             }
             ]
             };
 
-    var myBarChart = new Chart(ctx, {
-            type: 'pie',
+  var myBarChart = new Chart(ctx, {
+            type: 'bar',
             data: data,
             options: {
             legend: {
               display: false
             },
+            barValueSpacing: 20,
+            scales: {
+              yAxes: [{
+                  ticks: {
+                      min: 0,
+                  }
+              }],
+              xAxes: [{
+                          gridLines: {
+                              color: "rgb(0, 0, 0)",
+                          }
+                      }]
+              }
           }
         });
-//grafik penjualan
-//     var ctx = document.getElementById("penjualan").getContext("2d");
-//     var data = {
-//             labels: [<?php while ($p = mysqli_fetch_array($tgl_order)) { echo '"' . $p['tgl_order'] . '",';}?>],
-//             datasets: [
-//                 {
-//               label: "Total Transaksi",
-//               data: [
-//                 <?php while ($p = mysqli_fetch_array($jumlah)) {echo '"' . $p['jumlah'] . '",';}?>},
-//                 //         $sub_total = $data['harga'] * $data['jumlah'];
-//                 //         $total += $sub_total;})
-//                 // {echo '"'.$p['total'].'",';}?>],
-//               backgroundColor: [
-//                 '#FFB6C1', //light pink
-//                 '#90EE90', //light green
-//                 '#FFA07A', //ligt salmon
-//                 '#B0C4DE', //light steel blue
-//                 '#F0E68C', //khaki
-//                 '#CD5C5C' //indian red
-//               ]
-//             }
-//             ]
-//             };
-
-//   var myBarChart = new Chart(ctx, {
-//             type: 'bar',
-//             data: data,
-//             options: {
-//             legend: {
-//               display: false
-//             },
-//             barValueSpacing: 20,
-//             scales: {
-//               yAxes: [{
-//                   ticks: {
-//                       min: 0,
-//                   }
-//               }],
-//               xAxes: [{
-//                           gridLines: {
-//                               color: "rgb(0, 0, 0)",
-//                           }
-//                       }]
-//               }
-//           }
-//         });
 </script>

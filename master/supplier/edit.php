@@ -4,7 +4,7 @@ $id = $_GET['id'];
 $queryRowSupplier = $connect->query("SELECT * FROM supplier where id = '" . $id . "'");
 $rowSupplier = mysqli_fetch_array($queryRowSupplier);
 if (isset($_POST['ubah'])) {
-    $queryUpdate = $connect->query("UPDATE supplier SET  nama='" . $_POST['nama'] . "',alamat='".$_POST['alamat']."' ,telpon='".$_POST['telpon']."', keterangan='".$_POST['keterangan']."' WHERE id = '" . $id . "' ");
+    $queryUpdate = $connect->query("UPDATE supplier SET  nama='" . $_POST['nama'] . "',alamat='".$_POST['alamat']."' ,telpon='".$_POST['telpon']."', email='".$_POST['email']."' WHERE id = '" . $id . "' ");
 
 }
 if ($queryUpdate) {
@@ -48,10 +48,10 @@ if ($queryUpdate) {
                                 </div>
                             </div>
                             <div class="form-group ">
-                                <label for="keterangan" class="control-label col-lg-2" style="text-align: left;">Keterangan</label>
+                                <label for="email" class="control-label col-lg-2" style="text-align: left;">email</label>
                                 <div class="col-lg-6">
-                                    <input class="form-control" id="keterangan" name="keterangan" minlength="2"
-                                           type="text" value="<?php echo $rowSupplier['keterangan'] ?>" required/>
+                                    <input class="form-control" id="email" name="email" minlength="2"
+                                           type="text" value="<?php echo $rowSupplier['email'] ?>" required/>
                                 </div>
                             </div>
 
