@@ -27,15 +27,15 @@ include "config.php";
                                     <td><button class="btn btn-primary" type="submit" value="pencarian" name="pencarian">Lihat</button></td>
                                 </tr>
                                 <table class="table table-striped table-hover table-bordered" id="editable-sample">
-                            <thead>
-                                <tr>
-                                    <th width="5%">No</th>
-                                    <th width="15%">No Nota</th>
-                                    <th width="20%">Tanggal Pesanan</th>
-                                    <th width="20%">Jumlah Item</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                                    <thead>
+                                        <tr>
+                                            <th width="5%">No</th>
+                                            <th width="15%">No Nota</th>
+                                            <th width="20%">Tanggal Pesanan</th>
+                                            <th width="20%">Jumlah Item</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
                                 <?php
                                 //proses jika sudah klik tombol pencarian data
                                 if(isset($_POST['pencarian'])){

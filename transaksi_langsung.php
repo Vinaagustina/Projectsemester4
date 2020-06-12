@@ -16,11 +16,14 @@ include "config.php";
                 
                 <div class="panel-body">
                     <div class="adv-table editable-table ">
-                        <form>
-                            <table>
-                                <a href="?hal=rekap"><button class="btn btn-block btn-primary" id="tblRekap"type="button">Lihat Rekap</button></a>
-                            </table>
-                        </form>
+                    <div>
+                      <form>
+                          <table>
+                                <a href="?hal=rekap"><button class="btn btn-primary" id="rekap" type="button">Lihat Rekap</button></a>
+                                  <!-- <td><button class="btn btn-danger" type="reset" value="Reset"><a href="transaksi_langsung.php">Reset</a></button></td> -->
+                          </table>
+                      </form>
+                      </div>
                         <table class="table table-striped table-hover table-bordered" id="editable-sample">
                             <thead>
                             <tr>
