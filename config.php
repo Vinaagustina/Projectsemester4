@@ -6,9 +6,9 @@
 $selectdb= mysqli_select_db('penggajian') or die (' maaf database tidak ditemukan');
 	*/
 $dbhost = 'localhost';
-$dbuser = 'root';
-$dbpass = '';
-$dbname = 'pos_free_v1';
+$dbuser = '182410101116';
+$dbpass = 'secret';
+$dbname = 'uas182410101116';
 
 $connect =mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if($connect->connect_error){
