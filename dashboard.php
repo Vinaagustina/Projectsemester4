@@ -78,8 +78,13 @@ $total_terjual   = mysqli_query($koneksi, "SELECT total_terjual FROM barang orde
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
         </a>
         <!-- <a href="?hal=coming" style="color: #fff;">
+=======
+        </a><!--
+        <a href="?hal=coming" style="color: #fff;">
+>>>>>>> 04f442589363d056e30d9543d1709312a7b11e21
             <div class="col-md-3">
                 <div class="panel yellow-bg">
                     <div class="panel-body">

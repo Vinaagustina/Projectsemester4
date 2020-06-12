@@ -30,9 +30,16 @@ include 'config.php';
     <body>
             <h3 align="center">LAPORAN TRANSAKSI LANGSUNG</h3>       
         <div class="page">
+<<<<<<< HEAD
              <h4><b>TOKO HAJI DAN UMROH SALSA</b></h4>
              TANAH ABANG, JAKARTA BARAT<br> DKI JAKARTA<br>
              <br>
+=======
+          <h4><b>LIVINA STORE</b></h4>
+          SUMBERSARI, JEMBER<br> JAWA TIMUR<br>
+          <BR>
+
+>>>>>>> 04f442589363d056e30d9543d1709312a7b11e21
              Tgl Cetak: <?php echo date('d-m-y') ?>
         <div class="kop">
             <!--<img src="../img/kop.png" id="kop"><br>-->

@@ -17,13 +17,7 @@ $date=date('d-m-Y');
 require __DIR__.'/vendor/autoload.php';
 
 use Spipu\Html2Pdf\Html2Pdf;
-$html2pdf = new Html2Pdf('P', 'LEGAL', 'en');
+$html2pdf = new Html2Pdf('L', 'LEGAL', 'en');
 $html2pdf->setDefaultFont('Arial');
 $html2pdf->writeHTML($content);
 $html2pdf->output('example.pdf');
-
-
-
-
-
-
